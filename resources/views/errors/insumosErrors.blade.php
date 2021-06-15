@@ -36,3 +36,9 @@
     <b>{{Session::get('insnoaddtolist')}}</b>
 </div>
 @endif
+@if(Session::has('insumosnoagregados'))
+<div class="alert alert-danger alert-dismissible" role="success">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
+    <b>{{Session::get('insumosnoagregados')}}</b>
+</div>
+@endif

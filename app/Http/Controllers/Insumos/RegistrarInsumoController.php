@@ -20,8 +20,6 @@ class RegistrarInsumoController extends Controller {
     }
 
     public function register(Request $request) {
-
-         if ($this->getPermiso(3)) {
             $this->validate($request, ['nombre' => 'unique:giinsumos']);
 
             $insumo['nombre'] = strtoupper(trim($request->nombre));
@@ -40,9 +38,7 @@ class RegistrarInsumoController extends Controller {
                 Session::flash('insumonocreado', 'Algo falló' . $ex);
                 return redirect("RegistrarInsumo");
             }
-        }else {
-            return redirect("home");
-        }
+        
     }
 
 }

@@ -60,22 +60,16 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th style="width: 300px">Nombre</th>
-                                                <th style="width: 100px">Medida</th>
-                                                <th style="width: 100px"></th>
-                                                <th style="width: 1px"></th>
-                                                <th style="width: 1px"></th>
-                                                <th style="width: 1px"></th>                                                
+                                                <th>Nombre</th>
+                                                <th>Medida</th>
+                                                <th></th>                                           
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th style="width: 300px">Nombre</th>
-                                                <th style="width: 100px">Medida</th>
-                                                <th style="width: 100px"></th>
-                                                <th style="width: 1px"></th>
-                                                <th style="width: 1px"></th>
-                                                <th style="width: 1px"></th>
+                                               <th>Nombre</th>
+                                                <th>Medida</th>
+                                                <th></th> 
                                             </tr>
                                         </tfoot>                                        
                                         @foreach($insumos as $insumo)                                            
@@ -101,9 +95,6 @@
                                                 </div>
                                             </td>
                                             <td><button type="submit" class="btn btn-success btn-user btn-block" style="width: 150px">Modificar</button></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>   
                                         </form>
                                         </tr>                                   
                                         @endforeach

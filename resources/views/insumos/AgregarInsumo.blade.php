@@ -66,10 +66,7 @@
                                                 <th>Nombre</th>
                                                 <th>cantidad</th>
                                                 <th>Presentación</th>
-                                                <th>Añadir</th>
-                                                <th></th>
-                                                <th></th>
-
+                                                <th>Añadir</th>                                                
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -78,9 +75,6 @@
                                                 <th>Cantidad</th>
                                                 <th>Presentación</th>
                                                 <th>Añadir</th>
-                                                <th></th>
-                                                <th></th>
-
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -112,8 +106,6 @@
                                             </td>
 
                                             <td><button class="btn btn-primary btn-user btn-block" type="submit">+</button></td>
-                                            <td></td>
-                                            <td></td>
                                         </form>
                                         </tr>
                                         @endforeach

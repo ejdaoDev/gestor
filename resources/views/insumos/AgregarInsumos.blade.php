@@ -67,7 +67,7 @@
                                                 <th style="width: 250px;">Modificar</th>
                                                 <th></th>
                                                 <th>Eliminar</th>
-                                                <th></th>
+
 
                                             </tr>
                                         </thead>
@@ -78,7 +78,7 @@
                                                 <th style="width: 250px;">Modificar</th>
                                                 <th></th>
                                                 <th>Eliminar</th>
-                                                <th></th>
+
 
                                             </tr>
                                         </tfoot>
@@ -131,20 +131,22 @@
                                                         <button class="btn btn-danger btn-user btn-block" style="width: 50px;" type="submit">-</button>
                                                     </form> 
                                                 </td>
-                                                <td></td>
+
                                             </tr>
                                             @endforeach
 
                                         </tbody>
                                     </table>
                                     <center>
-                                        <button class="btn btn-danger btn-user btn-block" style="width: 180px; margin-left: 25px" type="button" data-toggle="modal" data-target="#CleanListModal">Limpiar Lista</button></td>
+                                        <form class="form-horizontal" method="POST" action="AgregarInsumos">{{csrf_field()}}
+                                            <input type="text" class="form-control" name="cantidad" style="width: 180px; margin-left: 25px; margin-bottom: 10px;" maxlength="11" onkeyup="format(this)" onchange="format(this)" value="{{ old('cantidad') }}" required>                 
+                                            <button class="btn btn-success btn-user btn-block" style="width: 180px; margin-left: 25px" type="submit">Agregar a stock</button>                                      
+                                            <button class="btn btn-danger btn-user btn-block" style="width: 180px; margin-left: 25px" type="button" data-toggle="modal" data-target="#CleanListModal">Limpiar Lista</button>
+                                        </form>
                                     </center>
                                 </div>
                             </div>
                         </div>
-
-
 
                         <!-- CleanList Modal-->
                         <div class="modal fade" id="CleanListModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -164,10 +166,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
 
                     </div>
                     <!-- /.container-fluid -->

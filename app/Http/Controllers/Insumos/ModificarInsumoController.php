@@ -21,7 +21,7 @@ class ModificarInsumoController extends Controller {
     }
 
     public function modify(Request $request) {
-        if ($this->getPermiso(4)) {
+       
             $insumo = Insumo::findOrFail($request->id);
             if ($insumo["nombre"] != strtoupper(trim($request->nombre))) {
                 $this->validate($request, ['nombre' => 'unique:giinsumos']);
@@ -41,9 +41,7 @@ class ModificarInsumoController extends Controller {
                 Session::flash('insumonoactualizado', 'Algo falló' . $ex);
                 return redirect("ModificarInsumo");
             }
-        } else {
-            return redirect("home");
-        }
-    }
+        } 
+    
 
 }

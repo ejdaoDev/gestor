@@ -30,7 +30,8 @@ Route::get('AgregarInsumos',[App\Http\Controllers\Insumos\AgregarInsumosControll
 Route::get('DeleteInsumo/{id}',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'deleteOne']);
 Route::post('ModifyInsumo/{id}',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'ModifyOne']);
 Route::get('DeleteInsumos',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'deleteAll']);
-Route::post('AgregarInsumo',[App\Http\Controllers\Insumos\AgregarInsumoController::class, 'add']);
+Route::post('AgregarInsumo',[App\Http\Controllers\Insumos\AgregarInsumoController::class, 'addOne']);
+Route::post('AgregarInsumos',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'addAll']);
 
 Route::get('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProductoController::class, 'getView']);
 Route::get('ModificarProducto',[App\Http\Controllers\Productos\ModificarProductoController::class, 'getView']);

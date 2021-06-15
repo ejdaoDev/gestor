@@ -10,7 +10,7 @@ class FacturaInsumos extends Model
     public $timestamps = false;
     protected $fillable = [
         "id",
-        "valor_pago",
+        "valorpago",
         "pruvisual",
         "created",
         "created_by",
