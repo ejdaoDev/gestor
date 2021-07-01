@@ -24,7 +24,6 @@
                     <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item active" href="RegistrarProducto">Registrar producto</a>
-                            <a class="collapse-item" href="ModificarProducto">Modificar producto</a>
                             <a class="collapse-item" href="ConsumirInsumo">Consumir insumo</a>
                             <a class="collapse-item" href="AgregarProducto">Agregar a stock</a>
                         </div>
@@ -50,6 +49,30 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
+                        <div class="col-lg-4" style="margin: 0 auto;">
+                            <form class="form-horizontal" method="POST" action="RegistrarProducto">{{csrf_field()}} 
+
+                                @include('exits.productosExits')
+                                @include('errors.productosErrors')                                
+                                <div class="form-group">
+                                    Nombre del producto:
+                                    <input type="text" class="form-control" name="nombre"  value="{{ old('nombre') }}" maxlength="70" required autofocus>
+                                </div>                                                               
+                                <div class="form-group">
+                                    El producto se mide por:
+                                    <select name="medida" class="form-control" required>
+                                    <option selected disabled hidden style='display: none' value=''></option>
+                                    <option value ="1">PESO</option>
+                                    <option value ="2">UNIDAD</option>
+                                </select>
+                                </div>
+                                <button class="btn btn-success btn-user btn-block" type="submit">registrar</button>
+
+                                <hr>
+
+                            </form>
+
+                        </div>
 
 
 

@@ -53,16 +53,7 @@
                             <form class="form-horizontal" method="POST" action="RegistrarInsumo">{{csrf_field()}} 
 
                                 @include('exits.insumosExits')
-                                @include('errors.insumosErrors')
-                                @if(count($errors)>0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach($errors->all() as $error)
-                                        {{$error}}
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                @endif
+                                @include('errors.insumosErrors')                                
                                 <div class="form-group">
                                     Nombre del insumo:
                                     <input type="text" class="form-control" name="nombre"  value="{{ old('nombre') }}" maxlength="70" required autofocus>

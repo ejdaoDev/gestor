@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Productos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Seguridad\Usuario;
+use App\Models\Productos\Producto;
 use Session;
 use Carbon\Carbon;
 
@@ -16,34 +17,27 @@ class RegistrarProductoController extends Controller
        return view('productos.registrarProducto');   
     }
     
-    /*
-    public function registrar(Request $request) {
-        
-    if(auth()->id() === 1){
-        $this->validate($request, ['cedula' => 'required|string|max:50|unique:usuarios']);
-         $this->validate($request, ['nombres' => 'required|string|max:50']);
-         $this->validate($request, ['apellidos' => 'required|string|max:50']);
-         $this->validate($request, ['email' => 'required|string|email|max:255|unique:usuarios']);
-         $this->validate($request, ['password' => 'required|string|min:6|max:255|confirmed']);
-         
-         $user['cedula']=$request->cedula;
-         $user['nombres']=$request->nombres;
-         $user['apellidos']=$request->apellidos;
-         $user['email']= $request->email;
-         $user['password']= bcrypt($request->password);
-         $user['usuario_id']= auth()->id();
-         
-        
-              Usuario::create($user);
-         
-         Session::flash('usuariocreado','El usuario fue registrado correctamente');
-         return view("Seguridad.RegistrarUsuario");
-         
-        
-    }
-    Session::flash('usuarionoautorizado','El usuario no está autorizado para crear nuevos usuarios');
-     return redirect("home");
-       
-    }*/
     
+    public function register(Request $request) {
+          $this->validate($request, ['nombre' => 'unique:giproductos']);
+
+            $producto['nombre'] = strtoupper(trim($request->nombre));
+            $producto['medida_id'] = $request->medida;
+            $producto['created'] = Carbon::now();
+            $producto['created_by'] = auth()->id();
+
+            \DB::beginTransaction();
+            try {
+                Producto::create($producto);
+                \DB::commit();
+                Session::flash('productocreado', 'El producto fue registrado correctamente');
+                return redirect("RegistrarProducto");
+            } catch (\Throwable $ex) {
+                \DB::rollback();
+                Session::flash('productonocreado', 'Algo falló' . $ex);
+                return redirect("RegistrarProducto");
+            }
+    
+        
+    }    
 }

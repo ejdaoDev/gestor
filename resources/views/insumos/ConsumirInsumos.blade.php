@@ -24,7 +24,6 @@
                     <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="RegistrarProducto">Registrar producto</a>
-                            <a class="collapse-item" href="ModificarProducto">Modificar producto</a>
                             <a class="collapse-item active" href="ConsumirInsumo">Consumir insumo</a>
                             <a class="collapse-item" href="AgregarProducto">Agregar a stock</a>
                         </div>

@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" type="image/x-icon" href="images/logo2.png" />
+       <!--<link rel="icon" type="image/x-icon" href="images/logo2.png" />-->
 
         <title>Login</title>
 
@@ -117,9 +117,7 @@
 
                                 <hr>
 
-                                <a href="miHistorial" target="_blank" style="margin-left: 70px;">Consulta tu historial de pago como cliente</a>
-
-
+                                
 
                             </div>
                         </div>
