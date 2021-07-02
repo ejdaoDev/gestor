@@ -37,6 +37,7 @@ Route::get('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProducto
 Route::post('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProductoController::class, 'register']);
 //Route::get('ModificarProducto',[App\Http\Controllers\Productos\ModificarProductoController::class, 'getView']);
 Route::get('ConsumirInsumo',[App\Http\Controllers\Insumos\ConsumirInsumoController::class, 'getView']);
+Route::post('ConsumirInsumo',[App\Http\Controllers\Insumos\ConsumirInsumoController::class, 'consume']);
 Route::get('AgregarProducto',[App\Http\Controllers\Productos\AgregarProductoController::class, 'getView']);
 
 Route::get('VenderProducto',[App\Http\Controllers\Ventas\VenderProductoController::class, 'getView']);

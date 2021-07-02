@@ -49,6 +49,64 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
+                        
+                        <div class="card shadow mb-4">                    
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>cantidad</th>
+                                                <th>Presentación</th>
+                                                <th>Sustraer</th>                                                
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Cantidad</th>
+                                                <th>Presentación</th>
+                                                <th>Sustraer</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            @foreach($insumos as $insumo)
+                                            <tr>
+                                        <form class="form-horizontal" method="POST" action="ConsumirInsumo">{{csrf_field()}}
+                                            <td>{{$insumo->nombre}}</td>
+                                            <td>                                                    
+
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <input type="hidden" class="form-control" name="id" value="{{$insumo->id}}">
+                                                    <input type="text" class="form-control" name="cantidad" maxlength="11" onkeyup="format(this)" onchange="format(this)" value="{{ old('cantidad') }}" required>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <select name="presentacion" class="form-control" required>                                                        
+                                                    @if($insumo->medida_id == 1)
+                                                    @foreach($presentaciones_1 as $presentacion)
+                                                    <option value ="{{$presentacion->id}}">{{$presentacion->nombre}}</option>
+                                                    @endforeach
+                                                    @endif
+                                                    @if($insumo->medida_id == 2)
+                                                    @foreach($presentaciones_2 as $presentacion)
+                                                    <option value ="{{$presentacion->id}}">{{$presentacion->nombre}}</option>
+                                                    @endforeach
+                                                    @endif
+                                                </select>
+                                            </td>
+
+                                            <td><button class="btn btn-danger btn-user btn-block" type="submit">-</button></td>
+                                        </form>
+                                        </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
 
 
