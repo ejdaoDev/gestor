@@ -49,7 +49,9 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-                        
+                        @include('exits.insumosExits')
+                        @include('errors.insumosErrors')
+
                         <div class="card shadow mb-4">                    
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -57,6 +59,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Nombre</th>
+                                                <th>Stock</th>
                                                 <th>cantidad</th>
                                                 <th>Presentación</th>
                                                 <th>Sustraer</th>                                                
@@ -65,6 +68,7 @@
                                         <tfoot>
                                             <tr>
                                                 <th>Nombre</th>
+                                                <th>Stock</th>
                                                 <th>Cantidad</th>
                                                 <th>Presentación</th>
                                                 <th>Sustraer</th>
@@ -75,6 +79,13 @@
                                             <tr>
                                         <form class="form-horizontal" method="POST" action="ConsumirInsumo">{{csrf_field()}}
                                             <td>{{$insumo->nombre}}</td>
+                                            <td>{{$insumo->stock}} 
+                                                @if($insumo->medida_id == 1)
+                                                KG(S)
+                                                @endif
+                                                @if($insumo->medida_id == 2)
+                                                UD(S)
+                                                @endif</td>
                                             <td>                                                    
 
                                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -83,6 +94,7 @@
                                                 </div>
 
                                             </td>
+
                                             <td>
                                                 <select name="presentacion" class="form-control" required>                                                        
                                                     @if($insumo->medida_id == 1)

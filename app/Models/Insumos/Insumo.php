@@ -16,8 +16,5 @@ class Insumo extends Modelo
         "created_by",
         "updated",
         "updated_by",
-        ];    
-    
-   
-    
+        ];
 }

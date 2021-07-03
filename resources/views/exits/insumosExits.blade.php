@@ -10,6 +10,12 @@
    <b>{{Session::get('insumoactualizado')}}</b>
  </div>
 @endif
+@if(Session::has('insumoconsumido'))
+ <div class="alert alert-success alert-dismissible" role="success">
+ <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
+   <b>{{Session::get('insumoconsumido')}}</b>
+ </div>
+@endif
 @if(Session::has('insaddtolist'))
  <div class="alert alert-success alert-dismissible" role="success">
  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>

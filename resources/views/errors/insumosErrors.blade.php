@@ -4,6 +4,12 @@
     <b>{{Session::get('insumonocreado')}}</b>
 </div>
 @endif
+@if(Session::has('cantidadnovalida'))
+<div class="alert alert-danger alert-dismissible" role="success">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
+    <b>{{Session::get('cantidadnovalida')}}</b>
+</div>
+@endif
 @if(Session::has('insumonoactualizado'))
 <div class="alert alert-danger alert-dismissible" role="success">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
