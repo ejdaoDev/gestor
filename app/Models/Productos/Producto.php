@@ -9,6 +9,7 @@ class Producto extends Modelo
     protected $table = 'giproductos';
     protected $fillable = [
         "nombre",
+        "precio",
         "stock",
         "used",
         "medida_id",

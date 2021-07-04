@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/gestor/resources/views/insumos/ConsumirInsumo.blade.php</file>
             <file>file:/C:/xampp/htdocs/gestor/app/Http/Controllers/Insumos/ConsumirInsumoController.php</file>
-            <file>file:/C:/xampp/htdocs/gestor/app/Http/Controllers/Insumos/AgregarInsumoController.php</file>
-            <file>file:/C:/xampp/htdocs/gestor/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/app/Http/Controllers/Insumos/AgregarInsumosController.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/resources/views/insumos/ConsumirInsumo.blade.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/app/Models/Productos/Producto.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/resources/views/errors/insumosErrors.blade.php</file>
             <file>file:/C:/xampp/htdocs/gestor/app/Models/Insumos/InsumoConsumido.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/resources/views/exits/insumosExits.blade.php</file>
         </group>
     </open-files>
 </project-private>

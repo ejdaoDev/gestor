@@ -30,8 +30,8 @@ Route::get('AgregarInsumos',[App\Http\Controllers\Insumos\AgregarInsumosControll
 Route::get('DeleteInsumo/{id}',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'deleteOne']);
 Route::post('ModifyInsumo/{id}',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'ModifyOne']);
 Route::get('DeleteInsumos',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'deleteAll']);
-Route::post('AgregarInsumo',[App\Http\Controllers\Insumos\AgregarInsumoController::class, 'addOne']);
 Route::post('AgregarInsumos',[App\Http\Controllers\Insumos\AgregarInsumosController::class, 'addAll']);
+Route::post('AgregarInsumo',[App\Http\Controllers\Insumos\AgregarInsumoController::class, 'addOne']);
 
 Route::get('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProductoController::class, 'getView']);
 Route::post('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProductoController::class, 'register']);
@@ -39,6 +39,14 @@ Route::post('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProduct
 Route::get('ConsumirInsumo',[App\Http\Controllers\Insumos\ConsumirInsumoController::class, 'getView']);
 Route::post('ConsumirInsumo',[App\Http\Controllers\Insumos\ConsumirInsumoController::class, 'consume']);
 Route::get('AgregarProducto',[App\Http\Controllers\Productos\AgregarProductoController::class, 'getView']);
+Route::get('AgregarProductos',[App\Http\Controllers\Productos\AgregarProductosController::class, 'getView']);
+Route::post('AgregarProducto',[App\Http\Controllers\Productos\AgregarProductoController::class, 'addOne']);
+
+Route::get('DeleteProducto/{id}',[App\Http\Controllers\Productos\AgregarProductosController::class, 'deleteOne']);
+Route::post('ModifyProducto/{id}',[App\Http\Controllers\Productos\AgregarProductosController::class, 'ModifyOne']);
+Route::get('DeleteProductos',[App\Http\Controllers\Productos\AgregarProductosController::class, 'deleteAll']);
+Route::post('AgregarProductos',[App\Http\Controllers\Productos\AgregarProductosController::class, 'addAll']);
+    
 
 Route::get('VenderProducto',[App\Http\Controllers\Ventas\VenderProductoController::class, 'getView']);
 Route::get('RestablecerPassword',[App\Http\Controllers\Seguridad\RecuperarPasswordController::class, 'getView']);
