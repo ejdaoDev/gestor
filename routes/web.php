@@ -49,6 +49,10 @@ Route::post('AgregarProductos',[App\Http\Controllers\Productos\AgregarProductosC
     
 
 Route::get('VenderProducto',[App\Http\Controllers\Ventas\VenderProductoController::class, 'getView']);
+Route::get('VenderProductos',[App\Http\Controllers\Ventas\VenderProductosController::class, 'getView']);
+Route::post('VenderProducto',[App\Http\Controllers\Ventas\VenderProductoController::class, 'addToList']);
+Route::post('ModifyProducto/{id}',[App\Http\Controllers\Ventas\VenderProductosController::class, 'modifyOne']);
+
 Route::get('RestablecerPassword',[App\Http\Controllers\Seguridad\RecuperarPasswordController::class, 'getView']);
 Route::post('RestablecerPassword',[App\Http\Controllers\Seguridad\RecuperarPasswordController::class, 'resetPass']);
 

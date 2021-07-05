@@ -29,12 +29,6 @@
     <b>{{Session::get('insumonoactualizado')}}</b>
 </div>
 @endif
-@if(Session::has('tienedecimal'))
-<div class="alert alert-danger alert-dismissible" role="success">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
-    <b>{{Session::get('tienedecimal')}}</b>
-</div>
-@endif
 @if(Session::has('insnoaddtolist'))
 <div class="alert alert-danger alert-dismissible" role="success">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
@@ -45,5 +39,11 @@
 <div class="alert alert-danger alert-dismissible" role="success">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
     <b>{{Session::get('productosnoagregados')}}</b>
+</div>
+@endif
+@if(Session::has('badcant'))
+<div class="alert alert-danger alert-dismissible" role="success">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
+    <b>{{Session::get('badcant')}}</b>
 </div>
 @endif

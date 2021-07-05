@@ -2,7 +2,7 @@
 <html lang="es">
 
     <head>
-        <title>vender producto</title>
+        <title>consumir insumo</title>
         @include('layouts.head')
     </head>
 
@@ -41,12 +41,83 @@
 
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                        <button style="width:  100px;" class="btn btn-primary btn-user btn-block" onclick = "location = 'VenderProductos'">{{$count}} In list</button>
                         @include('layouts.topbar')
                     </nav>
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
+                        @include('exits.productosExits')
+                        @include('errors.productosErrors')
+
+                        <div class="card shadow mb-4">                    
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Stock</th>
+                                                <th>cantidad</th>
+                                                <th>Presentación</th>
+                                                <th>al Carro</th>                                                
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Stock</th>
+                                                <th>Cantidad</th>
+                                                <th>Presentación</th>
+                                                <th>Al Carro</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            @foreach($productos as $producto)
+                                            <tr>
+                                        <form class="form-horizontal" method="POST" action="VenderProducto">{{csrf_field()}}
+                                            <td>{{$producto->nombre}}</td>
+                                            <td>{{$producto->stock}} 
+                                                @if($producto->medida_id == 1)
+                                                KG(S)
+                                                @endif
+                                                @if($producto->medida_id == 2)
+                                                UD(S)
+                                                @endif</td>
+                                            <td>                                                    
+
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <input type="hidden" class="form-control" name="id" value="{{$producto->id}}">
+                                                    <input type="text" class="form-control" name="cantidad" maxlength="11" onkeyup="format(this)" onchange="format(this)" value="{{ old('cantidad') }}" required>
+                                                </div>
+
+                                            </td>
+
+                                            <td>
+                                                <select name="presentacion" class="form-control" required>                                                        
+                                                    @if($producto->medida_id == 1)
+                                                    @foreach($presentaciones_1 as $presentacion)
+                                                    <option value ="{{$presentacion->id}}">{{$presentacion->nombre}}</option>
+                                                    @endforeach
+                                                    @endif
+                                                    @if($producto->medida_id == 2)
+                                                    @foreach($presentaciones_2 as $presentacion)
+                                                    <option value ="{{$presentacion->id}}">{{$presentacion->nombre}}</option>
+                                                    @endforeach
+                                                    @endif
+                                                </select>
+                                            </td>
+
+                                            <td><button class="btn btn-danger btn-user btn-block" type="submit">-</button></td>
+                                        </form>
+                                        </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
 
 
