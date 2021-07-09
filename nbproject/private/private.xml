@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/gestor/app/Http/Controllers/Insumos/AgregarInsumosController.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/app/Http/Controllers/Ventas/VenderProductosController.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/resources/views/ventas/VenderProductos.blade.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/app/Http/Controllers/Productos/AgregarProductosController.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/resources/views/insumos/AgregarInsumos.blade.php</file>
+            <file>file:/C:/xampp/htdocs/gestor/resources/views/exits/productosExits.blade.php</file>
+        </group>
     </open-files>
 </project-private>

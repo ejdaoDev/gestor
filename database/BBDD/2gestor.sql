@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2021 a las 21:35:51
+-- Tiempo de generación: 09-07-2021 a las 06:18:08
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.3.28
 
@@ -218,7 +218,7 @@ CREATE TABLE `gilisttempven` (
 --
 
 INSERT INTO `gilisttempven` (`id`, `producto_id`, `medida_id`, `presentacion_id`, `cantidad`, `val_unit`, `val_total`, `created_by`) VALUES
-(8, 2, 2, 4, 5.00, 1000.00, 250000.00, 1);
+(12, 2, 2, 2, 10.00, 1000.00, 10000.00, 1);
 
 -- --------------------------------------------------------
 
@@ -346,8 +346,8 @@ CREATE TABLE `giproductos` (
 --
 
 INSERT INTO `giproductos` (`id`, `nombre`, `precio`, `stock`, `used`, `medida_id`, `created`, `created_by`, `updated`, `updated_by`) VALUES
-(1, 'PAN DE BONO PEQUEñO', 500.00, 310.00, 1, 2, '2021-06-30 21:45:10', 1, '2021-07-04 13:54:22', 1),
-(2, 'PAN DE BONO GRANDE', 1000.00, 750.00, 1, 2, '2021-06-30 21:50:30', 1, '2021-07-04 14:28:45', 1);
+(1, 'PAN DE BONO PEQUEñO', 500.00, 310.00, 1, 2, '2021-06-30 21:45:10', 1, '2021-07-08 23:10:54', 1),
+(2, 'PAN DE BONO GRANDE', 1000.00, 990.00, 1, 2, '2021-06-30 21:50:30', 1, '2021-07-08 23:10:46', 1);
 
 -- --------------------------------------------------------
 
@@ -587,7 +587,7 @@ ALTER TABLE `gilisttemppro`
 -- AUTO_INCREMENT de la tabla `gilisttempven`
 --
 ALTER TABLE `gilisttempven`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `gimedida`
