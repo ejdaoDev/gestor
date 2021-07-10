@@ -16,12 +16,15 @@ class AgregarProductoController extends Controller
      
     
     public function getView() {
+        if ($this->getRol() == "INVENTARIO PRODUCTOS" | $this->getRol() == "ADMINISTRADOR"){
           $productos = Producto::all();
         $presentaciones_1 = Presentacion::all()->where("medida_id", 1);
         $presentaciones_2 = Presentacion::all()->where("medida_id", 2);
         $count = ListaTemporalProductos::all()->where("created_by", auth()->id())->count();
        return view('productos.AgregarProducto',compact("productos", "presentaciones_1", "presentaciones_2", "count"));   
-    
+        }else{
+            return back();
+        }
     }
      public function addOne(Request $request) {
        

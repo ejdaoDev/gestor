@@ -14,7 +14,11 @@ class RegistrarProductoController extends Controller
      
     
     public function getView() {
+        if ($this->getRol() == "INVENTARIO PRODUCTOS" | $this->getRol() == "ADMINISTRADOR"){
        return view('productos.registrarProducto');   
+        }else{
+            return back();
+        }
     }
     
     

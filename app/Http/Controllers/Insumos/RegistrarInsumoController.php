@@ -12,10 +12,10 @@ use Carbon\Carbon;
 class RegistrarInsumoController extends Controller {
 
     public function getView() {
-        if ($this->getPermiso(3)) {
+         if ($this->getRol() == "INVENTARIO INSUMOS" | $this->getRol() == "ADMINISTRADOR"){
             return view('insumos.RegistrarInsumo');
         } else {
-            return redirect("home");
+            return back();
         }
     }
 

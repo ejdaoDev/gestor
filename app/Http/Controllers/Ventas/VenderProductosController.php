@@ -14,11 +14,15 @@ use Carbon\Carbon;
 class VenderProductosController extends Controller {
 
     public function getView() {
+        if ($this->getRol() == "VENTAS" | $this->getRol() == "ADMINISTRADOR"){
         $productos = ListaTemporalVenta::all()->where("created_by", auth()->id());
         $presentaciones_1 = Presentacion::all()->where("medida_id", 1);
         $presentaciones_2 = Presentacion::all()->where("medida_id", 2);
         $total = ListaTemporalVenta::all()->where("created_by", auth()->id())->sum('val_total');
         return view('ventas.VenderProductos', compact("productos", "presentaciones_1", "presentaciones_2", "total"));
+        }else{
+            return back();
+        }
     }
 
     public function deleteOne($id) {

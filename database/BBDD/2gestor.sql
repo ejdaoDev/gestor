@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-07-2021 a las 06:18:08
+-- Tiempo de generación: 10-07-2021 a las 07:09:23
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.3.28
 
@@ -32,6 +32,7 @@ CREATE TABLE `gifactins` (
   `valorpago` double(10,2) UNSIGNED NOT NULL,
   `pruvisual` varchar(100) DEFAULT NULL,
   `created` datetime NOT NULL,
+  `createdate` date DEFAULT NULL,
   `created_by` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,11 +40,37 @@ CREATE TABLE `gifactins` (
 -- Volcado de datos para la tabla `gifactins`
 --
 
-INSERT INTO `gifactins` (`id`, `valorpago`, `pruvisual`, `created`, `created_by`) VALUES
-(19, 100000.00, NULL, '2021-06-15 16:23:53', 1),
-(20, 150000.00, NULL, '2021-06-15 16:25:13', 1),
-(21, 234444.11, NULL, '2021-06-15 16:37:42', 1),
-(22, 57500.00, NULL, '2021-06-20 06:03:08', 12);
+INSERT INTO `gifactins` (`id`, `valorpago`, `pruvisual`, `created`, `createdate`, `created_by`) VALUES
+(19, 100000.00, NULL, '2021-06-15 16:23:53', '2021-07-09', 1),
+(20, 150000.00, NULL, '2021-06-15 16:25:13', '2021-07-09', 1),
+(21, 234444.11, NULL, '2021-06-15 16:37:42', '2021-07-09', 1),
+(22, 57500.00, NULL, '2021-06-20 06:03:08', '2021-07-09', 12);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gifactven`
+--
+
+CREATE TABLE `gifactven` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `valorpago` double(12,2) UNSIGNED NOT NULL,
+  `pruvisual` varchar(100) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `createdate` date DEFAULT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `gifactven`
+--
+
+INSERT INTO `gifactven` (`id`, `valorpago`, `pruvisual`, `created`, `createdate`, `created_by`) VALUES
+(2, 500000.00, NULL, '2021-07-09 00:00:00', '2021-07-09', 1),
+(3, 5000.00, NULL, '2021-07-09 00:00:00', '2021-07-09', 1),
+(4, 75000.00, NULL, '2021-07-09 00:00:00', '2021-07-09', 1),
+(5, 50000.00, NULL, '2021-07-09 23:41:40', '2021-07-09', 1),
+(6, 25000.00, NULL, '2021-07-09 23:42:32', '2021-07-09', 1);
 
 -- --------------------------------------------------------
 
@@ -162,6 +189,34 @@ INSERT INTO `gilistaproductos` (`id`, `producto_id`, `cantidad`, `presentacion_i
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `gilistaventa`
+--
+
+CREATE TABLE `gilistaventa` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `producto_id` int(10) UNSIGNED NOT NULL,
+  `cantidad` double(12,2) UNSIGNED NOT NULL,
+  `presentacion_id` int(10) UNSIGNED NOT NULL,
+  `factven_id` int(10) UNSIGNED NOT NULL,
+  `created` datetime NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `gilistaventa`
+--
+
+INSERT INTO `gilistaventa` (`id`, `producto_id`, `cantidad`, `presentacion_id`, `factven_id`, `created`, `created_by`) VALUES
+(1, 2, 500.00, 2, 2, '2021-07-09 22:50:13', 1),
+(2, 1, 10.00, 2, 3, '2021-07-09 22:50:42', 1),
+(3, 2, 1.00, 4, 4, '2021-07-09 22:50:57', 1),
+(4, 1, 1.00, 4, 4, '2021-07-09 22:50:57', 1),
+(5, 2, 50.00, 2, 5, '2021-07-09 23:41:40', 1),
+(6, 1, 50.00, 2, 6, '2021-07-09 23:42:32', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `gilisttempins`
 --
 
@@ -212,13 +267,6 @@ CREATE TABLE `gilisttempven` (
   `val_total` double(12,2) UNSIGNED NOT NULL,
   `created_by` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `gilisttempven`
---
-
-INSERT INTO `gilisttempven` (`id`, `producto_id`, `medida_id`, `presentacion_id`, `cantidad`, `val_unit`, `val_total`, `created_by`) VALUES
-(12, 2, 2, 2, 10.00, 1000.00, 10000.00, 1);
 
 -- --------------------------------------------------------
 
@@ -346,8 +394,8 @@ CREATE TABLE `giproductos` (
 --
 
 INSERT INTO `giproductos` (`id`, `nombre`, `precio`, `stock`, `used`, `medida_id`, `created`, `created_by`, `updated`, `updated_by`) VALUES
-(1, 'PAN DE BONO PEQUEñO', 500.00, 310.00, 1, 2, '2021-06-30 21:45:10', 1, '2021-07-08 23:10:54', 1),
-(2, 'PAN DE BONO GRANDE', 1000.00, 990.00, 1, 2, '2021-06-30 21:50:30', 1, '2021-07-08 23:10:46', 1);
+(1, 'PAN DE BONO PEQUEñO', 500.00, 200.00, 1, 2, '2021-06-30 21:45:10', 1, '2021-07-08 23:10:54', 1),
+(2, 'PAN DE BONO GRANDE', 1000.00, 400.00, 1, 2, '2021-06-30 21:50:30', 1, '2021-07-08 23:10:46', 1);
 
 -- --------------------------------------------------------
 
@@ -372,8 +420,7 @@ INSERT INTO `giroles` (`id`, `nombre`, `created`, `created_by`, `updated`, `upda
 (1, 'ADMINISTRADOR', '2021-05-14 00:00:00', 1, '2021-05-14 00:00:00', 1),
 (2, 'INVENTARIO INSUMOS', '2021-05-17 11:09:18', 1, '2021-05-17 11:09:18', 1),
 (3, 'INVENTARIO PRODUCTOS', '2021-06-06 17:01:12', 1, '2021-06-06 17:01:12', 1),
-(4, 'VENTAS', '2021-06-06 17:06:09', 1, NULL, NULL),
-(5, 'CONTABILIDAD', '2021-06-06 00:07:49', 1, NULL, NULL);
+(4, 'VENTAS', '2021-06-06 17:06:09', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -432,8 +479,9 @@ CREATE TABLE `giusuarios` (
 
 INSERT INTO `giusuarios` (`id`, `tipide_id`, `numide`, `rol_id`, `prinom`, `secnom`, `priape`, `secape`, `nickname`, `email`, `email_verified_at`, `password`, `reset_pass`, `remember_token`, `active`, `created`, `created_by`, `updated`, `updated_by`) VALUES
 (1, 1, '1065819503', 1, 'Admin', '', '', NULL, 'admin', 'ejdao2015@hotmail.com', NULL, '$2y$10$g11glnxSpXdSMVFCFaMMkeHbWswvBz3ggsiOXadYDyBNlMHBVpAKK', 0, NULL, 1, '2021-05-14 00:00:00', 1, '2021-06-07 00:13:34', 7),
-(9, 1, '41878965', 4, 'Francisco', 'Martin', 'Segundo', 'Cabello', NULL, 'francisco@hotmail.com', NULL, '$2y$10$u2vryoeEst2rsESUZXGRme2l1fHNi2.6Xnme5IUFGIFyL0Y1zdYmS', 0, NULL, 1, '2021-06-07 22:45:32', 1, '2021-06-10 16:15:20', 1),
-(12, 1, '123456', 2, 'Gustavo', NULL, 'Mota', 'Pinilla', NULL, 'gustavo@hotmail.com', NULL, '$2y$10$sN9CZ24/6gA9thF09CK/0.9mh41Wob4FvgvsSQCt1P2/AxWDl2EmK', 0, NULL, 0, '2021-06-20 05:47:12', 1, '2021-07-04 09:30:41', 1);
+(9, 1, '41878965', 4, 'Francisco', 'Martin', 'Segundo', 'Cabello', NULL, 'francisco@hotmail.com', NULL, '$2y$10$eLu5EnE6yb3c6bZNgjQ28Oc4PBPedaVN3/qOGLaGMad8Y/JYAqIcG', 0, NULL, 1, '2021-06-07 22:45:32', 1, '2021-07-09 22:14:10', 1),
+(12, 1, '123456', 2, 'Gustavo', NULL, 'Mota', 'Pinilla', NULL, 'gustavo@hotmail.com', NULL, '$2y$10$6PKR/5LMS70HtlkZiaAGLuDg40aHIC02KFuWkg/8iWTDscl810.Ue', 0, NULL, 1, '2021-06-20 05:47:12', 1, '2021-07-09 23:11:41', 1),
+(13, 1, '58796412', 4, 'Raquel', NULL, 'Osias', NULL, NULL, 'raquel@hotmail.com', NULL, '$2y$10$v4H9M2yqOnBs4hsZ1FIbJuWkMhM0Q4HQ1fimFDcvPLbWC51/3rhTq', 0, NULL, 1, '2021-07-09 23:53:04', 1, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -443,6 +491,12 @@ INSERT INTO `giusuarios` (`id`, `tipide_id`, `numide`, `rol_id`, `prinom`, `secn
 -- Indices de la tabla `gifactins`
 --
 ALTER TABLE `gifactins`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `gifactven`
+--
+ALTER TABLE `gifactven`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -467,6 +521,12 @@ ALTER TABLE `gilistainsumos`
 -- Indices de la tabla `gilistaproductos`
 --
 ALTER TABLE `gilistaproductos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `gilistaventa`
+--
+ALTER TABLE `gilistaventa`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -548,6 +608,12 @@ ALTER TABLE `gifactins`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
+-- AUTO_INCREMENT de la tabla `gifactven`
+--
+ALTER TABLE `gifactven`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `giinsumos`
 --
 ALTER TABLE `giinsumos`
@@ -572,6 +638,12 @@ ALTER TABLE `gilistaproductos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `gilistaventa`
+--
+ALTER TABLE `gilistaventa`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `gilisttempins`
 --
 ALTER TABLE `gilisttempins`
@@ -587,7 +659,7 @@ ALTER TABLE `gilisttemppro`
 -- AUTO_INCREMENT de la tabla `gilisttempven`
 --
 ALTER TABLE `gilisttempven`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `gimedida`
@@ -635,7 +707,7 @@ ALTER TABLE `gitipide`
 -- AUTO_INCREMENT de la tabla `giusuarios`
 --
 ALTER TABLE `giusuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

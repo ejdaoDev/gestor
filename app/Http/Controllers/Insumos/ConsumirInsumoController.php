@@ -14,10 +14,14 @@ use Carbon\Carbon;
 class ConsumirInsumoController extends Controller {
 
     public function getView() {
+        if ($this->getRol() == "INVENTARIO PRODUCTOS" | $this->getRol() == "ADMINISTRADOR"){
         $insumos = Insumo::all();
         $presentaciones_1 = Presentacion::all()->where("medida_id", 1);
         $presentaciones_2 = Presentacion::all()->where("medida_id", 2);
         return view('insumos.ConsumirInsumo', compact("insumos", "presentaciones_1", "presentaciones_2"));
+        }else{
+            return back();
+        }
     }
 
     public function consume(Request $request) {

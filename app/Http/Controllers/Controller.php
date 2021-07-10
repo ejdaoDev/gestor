@@ -20,20 +20,8 @@ class Controller extends BaseController {
         $this->middleware('reset.password');             
     }
     
-    public function getPermiso($id){
+    public function getRol(){
         $user = Usuario::findOrFail(auth()->id());
-        $permisos = PermisoRol::all()->where("rol_id",$user["rol_id"]);
-        $coincidencias = 0;
-        foreach($permisos as $permiso){
-            if($permiso->permiso_id == $id){
-                $coincidencias++;
-            }
-        }
-        if($coincidencias>0){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
+        return $user->rol->nombre;       
+    } 
 }

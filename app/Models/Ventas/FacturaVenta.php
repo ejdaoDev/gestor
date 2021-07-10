@@ -13,6 +13,7 @@ class FacturaVenta extends Model
         "valorpago",
         "pruvisual",
         "created",
+        "createdate",
         "created_by",
         ];
     

@@ -14,14 +14,14 @@ use Carbon\Carbon;
 class AgregarInsumoController extends Controller {
 
     public function getView() {
-         if ($this->getPermiso(3)) {
+            if ($this->getRol() == "INVENTARIO INSUMOS" | $this->getRol() == "ADMINISTRADOR"){
         $insumos = Insumo::all();
         $presentaciones_1 = Presentacion::all()->where("medida_id", 1);
         $presentaciones_2 = Presentacion::all()->where("medida_id", 2);
         $count = ListaTemporalInsumos::all()->where("created_by", auth()->id())->count();
         return view('insumos.AgregarInsumo', compact("insumos", "presentaciones_1", "presentaciones_2", "count"));
     } else {
-            return redirect("home");
+           return back();
         }
         
          }

@@ -16,11 +16,15 @@ use Carbon\Carbon;
 class VenderProductoController extends Controller {
 
     public function getView() {
+        if ($this->getRol() == "VENTAS" | $this->getRol() == "ADMINISTRADOR"){
         $productos = Producto::all();
         $count = ListaTemporalVenta::all()->where("created_by", auth()->id())->count();
         $presentaciones_1 = Presentacion::all()->where("medida_id", 1);
         $presentaciones_2 = Presentacion::all()->where("medida_id", 2);
         return view('ventas.VenderProducto', compact("productos", "presentaciones_1", "presentaciones_2", "count"));
+        }else{
+            return back();
+        }
     }
     
     public  function SellProducts(Request $request){
@@ -28,6 +32,7 @@ class VenderProductoController extends Controller {
         $request->total = str_replace("$", "", $request->total);
         $factura["valorpago"] = $request->total;
         $factura["created"] = Carbon::now();
+        $factura["createdate"] = Carbon::now();
         $factura["created_by"] = auth()->id();
         FacturaVenta::create($factura);
         $lastFactura = FacturaVenta::where('created_by', '=', auth()->id())->orderby('id', 'DESC')->first();

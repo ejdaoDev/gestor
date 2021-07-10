@@ -1,3 +1,4 @@
+@if(auth()->user()->rol_id == 1 | auth()->user()->rol_id == 3)
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
        aria-expanded="true" aria-controls="collapseThree">
@@ -11,3 +12,4 @@
         </div>
     </div>
 </li>
+@endif

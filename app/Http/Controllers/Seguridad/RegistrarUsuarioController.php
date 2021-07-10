@@ -12,11 +12,11 @@ use Carbon\Carbon;
 class RegistrarUsuarioController extends Controller {
 
     public function getView() {
-        if ($this->getPermiso(1)) {
+    if ($this->getRol() == "ADMINISTRADOR"){
             $roles = Rol::all();
             return view('seguridad.RegistrarUsuario', compact("roles"));
         } else {
-            return redirect("home");
+            return back();
         }
     }
 

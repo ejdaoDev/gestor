@@ -12,11 +12,11 @@ use Carbon\Carbon;
 class ModificarInsumoController extends Controller {
 
     public function getView() {
-        if ($this->getPermiso(4)) {
+        if ($this->getRol() == "INVENTARIO INSUMOS" | $this->getRol() == "ADMINISTRADOR"){
             $insumos = Insumo::all()->where("used", false);
             return view('insumos.ModificarInsumo', compact("insumos"));
         } else {
-            return redirect("home");
+            return back();
         }
     }
 

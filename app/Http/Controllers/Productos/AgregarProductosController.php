@@ -17,10 +17,14 @@ class AgregarProductosController extends Controller
      
     
     public function getView() {
+        if ($this->getRol() == "INVENTARIO PRODUCTOS" | $this->getRol() == "ADMINISTRADOR"){
         $insumos = ListaTemporalProductos::all()->where("created_by", auth()->id());
         $presentaciones_1 = Presentacion::all()->where("medida_id", 1);
         $presentaciones_2 = Presentacion::all()->where("medida_id", 2);
-       return view('productos.AgregarProductos', compact("insumos", "presentaciones_1", "presentaciones_2"));   
+       return view('productos.AgregarProductos', compact("insumos", "presentaciones_1", "presentaciones_2"));  
+        }else{
+            return back();
+        }
     }
      public function deleteOne($id) {
         $insumo = ListaTemporalProductos::findOrFail($id);

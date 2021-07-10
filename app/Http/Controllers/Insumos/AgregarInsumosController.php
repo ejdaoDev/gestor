@@ -16,13 +16,13 @@ use Carbon\Carbon;
 class AgregarInsumosController extends Controller {
 
     public function getView() {
-         if ($this->getPermiso(3)) {
+         if ($this->getRol() == "INVENTARIO INSUMOS" | $this->getRol() == "ADMINISTRADOR"){
         $insumos = ListaTemporalInsumos::all()->where("created_by", auth()->id());
         $presentaciones_1 = Presentacion::all()->where("medida_id", 1);
         $presentaciones_2 = Presentacion::all()->where("medida_id", 2);
         return view('insumos.AgregarInsumos', compact("insumos", "presentaciones_1", "presentaciones_2"));
     }else {
-            return redirect("home");
+            return back();
         }
     }
 
@@ -59,6 +59,7 @@ class AgregarInsumosController extends Controller {
         $request->cantidad = str_replace(",", "", $request->cantidad);
         $factura["valorpago"] = $request->cantidad;
         $factura["created"] = Carbon::now();
+        $factura["createdate"] = Carbon::now();
         $factura["created_by"] = auth()->id();
         FacturaInsumos::create($factura);
         $lastFactura = FacturaInsumos::where('created_by', '=', auth()->id())->orderby('id', 'DESC')->first();

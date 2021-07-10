@@ -11,11 +11,11 @@ use Carbon\Carbon;
 class ModificarUsuarioController extends Controller {
 
     public function getView() {
-        if ($this->getPermiso(2)) {
+          if ($this->getRol() == "ADMINISTRADOR"){
             $usuarios = Usuario::all()->where("id", "!=", auth()->id());
             return view('seguridad.ModificarUsuario', compact("usuarios"));
         } else {
-            return redirect("home");
+            return back();
         }
     }
 
