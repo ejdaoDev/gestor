@@ -51,6 +51,7 @@ Route::post('AgregarProductos',[App\Http\Controllers\Productos\AgregarProductosC
 Route::get('VenderProducto',[App\Http\Controllers\Ventas\VenderProductoController::class, 'getView']);
 Route::get('VenderProductos',[App\Http\Controllers\Ventas\VenderProductosController::class, 'getView']);
 Route::post('VenderProducto',[App\Http\Controllers\Ventas\VenderProductoController::class, 'addToList']);
+Route::post('VenderProductos',[App\Http\Controllers\Ventas\VenderProductoController::class, 'SellProducts']);
 Route::post('ModifyProducto/{id}',[App\Http\Controllers\Ventas\VenderProductosController::class, 'modifyOne']);
 Route::get('DeleteProducto/{id}',[App\Http\Controllers\Ventas\VenderProductosController::class, 'deleteOne']);
 Route::get('DeleteProductos',[App\Http\Controllers\Ventas\VenderProductosController::class, 'deleteAll']);

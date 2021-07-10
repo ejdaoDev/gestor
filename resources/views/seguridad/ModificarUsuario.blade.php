@@ -61,9 +61,10 @@
                                                 <th>Identidad</th>
                                                 <th>Nombres</th>
                                                 <th>Apellidos</th>
+                                                <th>Email</th>
+                                                <th>Rol</th>
                                                 <th style="width: 110px;">recuperar password</th>
                                                 <th style="width: 60px;">Cambiar estado</th>
-                                                <th style="width: 0px;"></th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -71,9 +72,10 @@
                                                 <th>Identidad</th>
                                                 <th>Nombres</th>
                                                 <th>Apellidos</th>
+                                                <th>Email</th>
+                                                <th>Rol</th>
                                                 <th style="height: 110px;">recuperar password</th>
                                                 <th style="width: 60px;">Cambiar estado</th>
-                                                <th style="width:  0px;"></th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -82,6 +84,8 @@
                                                 <th scope="row"><a href="ModificarUsuario/{{$usuario->id}}">{{$usuario->numide}}</a></th>
                                                 <td>{{$usuario->prinom}}</td>
                                                 <td>{{$usuario->priape}}</td>
+                                                <td>{{$usuario->email}}</td>
+                                                <td>{{$usuario->rol->nombre}}</td>
                                                 <td><a href="resetPassword/{{$usuario->id}}"> <img src="images/reset.png" style="width: 100px; height: 50px; margin-left: 10px;"></td>
                                                 @if($usuario->active == true)      
                                                 <td><a href="inactivateUser/{{$usuario->id}}"> <img src="images/activo.png" style="width: 60px; height: 50px; margin-left: 10px;"></td>
@@ -89,7 +93,7 @@
                                                 @if($usuario->active == false)      
                                                 <td><a href="activateUser/{{$usuario->id}}"> <img src="images/inactivo.png" style="width: 60px; height: 50px; margin-left: 10px;"></td>
                                                 @endif
-                                                <td></td>
+                                            
                                             </tr>
                                             @endforeach
                                         </tbody>

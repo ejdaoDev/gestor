@@ -23,6 +23,12 @@
     <b>{{Session::get('productonocreado')}}</b>
 </div>
 @endif
+@if(Session::has('productosnovendidos'))
+<div class="alert alert-danger alert-dismissible" role="success">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
+    <b>{{Session::get('productosnovendidos')}}</b>
+</div>
+@endif
 @if(Session::has('insumonoactualizado'))
 <div class="alert alert-danger alert-dismissible" role="success">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>

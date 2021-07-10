@@ -124,14 +124,15 @@
 
 
                                         <td><button class="btn btn-danger btn-user btn-block" href="DeleteProducto/{{$producto->id}}"  onclick="location = 'DeleteProducto/{{$producto->id}}'" type="button">-</button></td>
-                                       
+                                    
                                         </tr>
                                         @endforeach
                                         </tbody>
                                     </table>
                                     <center>
-                                        <form class="form-horizontal" method="POST" action="AgregarInsumos">{{csrf_field()}}
+                                        <form class="form-horizontal" method="POST" action="VenderProductos">{{csrf_field()}}
                                             <input disabled="true" type="text" class="form-control" name="total" style="width: 180px; margin-left: 25px; margin-bottom: 10px;" maxlength="11" onkeyup="format(this)" onchange="format(this)" value="${{number_format($total)}}" required>                 
+                                            <input type="hidden" class="form-control" name="total" style="width: 180px; margin-left: 25px; margin-bottom: 10px;" maxlength="11" onkeyup="format(this)" onchange="format(this)" value="${{number_format($total)}}" required>                 
                                             <button class="btn btn-success btn-user btn-block" style="width: 180px; margin-left: 25px" type="submit">Generar Factura</button>                                      
                                             <button class="btn btn-danger btn-user btn-block" style="width: 180px; margin-left: 25px" type="button" data-toggle="modal" data-target="#CleanListModal">Limpiar Lista</button>
                                         </form>
