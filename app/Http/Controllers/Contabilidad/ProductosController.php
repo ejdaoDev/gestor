@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Contabilidad;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Insumos\Insumo;
-use App\Models\Insumos\ListaTemporalInsumos;
-use App\Models\Insumos\ListaInsumos;
+use App\Models\Ventas\FacturaVenta;
+use App\Models\Productos\ListaProductos;
 use App\Models\Presentacion;
 use Session;
 use Carbon\Carbon;
@@ -15,7 +15,8 @@ class ProductosController extends Controller {
 
     public function showListaIngresoProductos() {
         if ($this->getRol() == "ADMINISTRADOR") {
-            return view("contabilidad.ListaIngresoProductos");
+            $productos = ListaProductos::all();
+            return view("contabilidad.ListaIngresoProductos", compact("productos"));
         } else {
             return back();
         }
@@ -23,7 +24,8 @@ class ProductosController extends Controller {
 
     public function showListaVentaProductos() {
         if ($this->getRol() == "ADMINISTRADOR") {
-            return view("contabilidad.ListaVentaProductos");
+            $ventas = FacturaVenta::all();
+            return view("contabilidad.ListaVentaProductos", compact("ventas"));
         } else {
             return back();
         }

@@ -55,6 +55,45 @@
                     <div class="container-fluid">
                         @include('exits.contabilidadExits')
                         @include('errors.contabilidadErrors')
+                        
+                          <!-- DataTales Example -->
+                        <div class="card shadow mb-4">                    
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>Registrado el</th>
+                                                <th>Registrado por</th>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>Registrado el</th>
+                                                <th>Registrado por</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            @foreach ($productos as $producto)
+                                            <tr>
+                                                <td>{{$producto->id}}</td>
+                                                <td>{{$producto->producto->nombre}}</td>
+                                                <td>{{$producto->cantidad}} {{$producto->presentacion->nombre}}</td>                                            
+                                                <td>{{$producto->created}}</td>                                             
+                                                <td>{{$producto->usuario->prinom}} {{$producto->usuario->priape}}</td>                                             
+                                            </tr>        
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
 
 
 

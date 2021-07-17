@@ -56,6 +56,47 @@
                         @include('exits.contabilidadExits')
                         @include('errors.contabilidadErrors')
 
+                        
+                         <!-- DataTales Example -->
+                        <div class="card shadow mb-4">                    
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Insumo</th>
+                                                <th>Cantidad</th>
+                                                <th>Registrado el</th>
+                                                <th>Registrado por</th>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Insumo</th>
+                                                <th>Cantidad</th>
+                                                <th>Registrado el</th>
+                                                <th>Registrado por</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            @foreach ($insumos as $insumo)
+                                            <tr>
+                                                <td>{{$insumo->id}}</td>
+                                                <td>{{$insumo->insumo->nombre}}</td>
+                                                <td>{{$insumo->cantidad}} {{$insumo->presentacion->nombre}}</td>                                            
+                                                <td>{{$insumo->created}}</td>                                             
+                                                <td>{{$insumo->usuario->prinom}} {{$insumo->usuario->priape}}</td>                                             
+                                            </tr>        
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+
 
 
 

@@ -17,6 +17,12 @@ class FacturaInsumos extends Model
         "created_by",
         ];
     
+        public function usuario()
+    {
+        //one to one inverso, el prestamo pertenece a un cliente
+        return $this->belongsTo('App\Models\Seguridad\Usuario','created_by','id');
+    }
+    
    
     
 }

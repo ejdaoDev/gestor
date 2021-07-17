@@ -55,6 +55,45 @@
                     <div class="container-fluid">
                         @include('exits.contabilidadExits')
                         @include('errors.contabilidadErrors')
+                        
+                        
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">                    
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Valor</th>
+                                                <th>Fecha Ingreso</th>
+                                                <th>Agregado por</th>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Valor</th>
+                                                <th>Fecha Ingreso</th>
+                                                <th>Agregado por</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            @foreach ($ventas as $venta)
+                                            <tr>
+                                                <td>{{$venta->id}}</td>
+                                                <td>{{number_format($venta->valorpago)}} $</td>
+                                                <td>{{$venta->created}}</td>
+                                                <td>{{$venta->usuario->prinom}} {{$venta->usuario->priape}}</td>                                             
+                                            </tr>        
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+
 
 
 
