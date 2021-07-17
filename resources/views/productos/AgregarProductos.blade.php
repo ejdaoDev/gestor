@@ -89,7 +89,7 @@
                                                 <td>{{$insumo->producto->nombre}}</td>
                                                 <td>{{$insumo->cantidad}} {{$insumo->presentacion->abreviacion}}</td>
                                                 <td>
-                                                    <form class="form-horizontal" method="post" action="ModifyProducto/{{$insumo->id}}">{{csrf_field()}}
+                                                    <form class="form-horizontal" method="post" action="ModifyProducto2/{{$insumo->id}}">{{csrf_field()}}
                                                         <div class="form-group row">
                                                             <div >
                                                                 <input type="text" class="form-control" name="cantidad" maxlength="11" onkeyup="format(this)" onchange="format(this)" style="width: 100px; margin-left: 5px;" value="{{$insumo->cantidad}}" maxlength="70" required autofocus>
@@ -127,7 +127,7 @@
                                                     </form> 
                                                 </td>
                                                 <td>
-                                                    <form class="form-horizontal" method="GET" action="DeleteProducto/{{$insumo->id}}">{{csrf_field()}}
+                                                    <form class="form-horizontal" method="GET" action="DeleteProducto2/{{$insumo->id}}">{{csrf_field()}}
                                                         <button class="btn btn-danger btn-user btn-block" style="width: 50px;" type="submit">-</button>
                                                     </form> 
                                                 </td>
@@ -160,7 +160,7 @@
                                     <div class="modal-body">Selecciona "Limpiar" si estas seguro de querer descartar todos los items de la lista</div>
                                     <div class="modal-footer">
                                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                        <a class="btn btn-danger" href="DeleteProductos" onclick = "location = 'DeleteProductos'">Limpiar</a>               
+                                        <a class="btn btn-danger" href="DeleteProductos2" onclick = "location = 'DeleteProductos2'">Limpiar</a>               
                                     </div>
                                 </div>
                             </div>

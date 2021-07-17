@@ -66,6 +66,10 @@
                                     <option value ="2">UNIDAD</option>
                                 </select>
                                 </div>
+                                <div class="form-group">
+                                    Precio del producto:
+                                    <input type="text" class="form-control" name="precio"  onkeyup="format(this)" onchange="format(this)" value="{{ old('precio') }}" maxlength="20" required autofocus>
+                                </div> 
                                 <button class="btn btn-success btn-user btn-block" type="submit">registrar</button>
 
                                 <hr>

@@ -27,6 +27,7 @@ class RegistrarProductoController extends Controller
 
             $producto['nombre'] = strtoupper(trim($request->nombre));
             $producto['medida_id'] = $request->medida;
+            $producto['precio'] = str_replace(",", "", $request->precio);
             $producto['created'] = Carbon::now();
             $producto['created_by'] = auth()->id();
 

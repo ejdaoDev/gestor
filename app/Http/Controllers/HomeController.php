@@ -33,10 +33,10 @@ class HomeController extends Controller
         $lastday = $currentYear."-12-31";
         $inicio = Carbon::createFromFormat('Y-m-d',$firstday);
         $fin = Carbon::createFromFormat('Y-m-d',$lastday);
-        $var1 = FacturaVenta::all()->where("created_by", auth()->id())->whereBetween("createdate",[$ayer,$hoy])->sum("valorpago");
-        $var2 = FacturaVenta::all()->where("created_by", auth()->id())->whereBetween("createdate",[$firstday,$lastday])->sum("valorpago");
-        $var3 = FacturaInsumos::all()->where("created_by", auth()->id())->whereBetween("createdate",[$ayer,$hoy])->sum("valorpago");
-        $var4 = FacturaInsumos::all()->where("created_by", auth()->id())->whereBetween("createdate",[$firstday,$lastday])->sum("valorpago");
+        $var1 = FacturaVenta::all()->whereBetween("createdate",[$ayer,$hoy])->sum("valorpago");
+        $var2 = FacturaVenta::all()->whereBetween("createdate",[$firstday,$lastday])->sum("valorpago");
+        $var3 = FacturaInsumos::all()->whereBetween("createdate",[$ayer,$hoy])->sum("valorpago");
+        $var4 = FacturaInsumos::all()->whereBetween("createdate",[$firstday,$lastday])->sum("valorpago");
 
             return view('home', compact("var1", "var2","var3", "var4"));        
       

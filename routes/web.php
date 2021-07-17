@@ -42,9 +42,9 @@ Route::get('AgregarProducto',[App\Http\Controllers\Productos\AgregarProductoCont
 Route::get('AgregarProductos',[App\Http\Controllers\Productos\AgregarProductosController::class, 'getView']);
 Route::post('AgregarProducto',[App\Http\Controllers\Productos\AgregarProductoController::class, 'addOne']);
 
-Route::get('DeleteProducto/{id}',[App\Http\Controllers\Productos\AgregarProductosController::class, 'deleteOne']);
-Route::post('ModifyProducto/{id}',[App\Http\Controllers\Productos\AgregarProductosController::class, 'ModifyOne']);
-Route::get('DeleteProductos',[App\Http\Controllers\Productos\AgregarProductosController::class, 'deleteAll']);
+Route::get('DeleteProducto2/{id}',[App\Http\Controllers\Productos\AgregarProductosController::class, 'deleteOne']);
+Route::post('ModifyProducto2/{id}',[App\Http\Controllers\Productos\AgregarProductosController::class, 'ModifyOne']);
+Route::get('DeleteProductos2',[App\Http\Controllers\Productos\AgregarProductosController::class, 'deleteAll']);
 Route::post('AgregarProductos',[App\Http\Controllers\Productos\AgregarProductosController::class, 'addAll']);
     
 
@@ -59,6 +59,11 @@ Route::get('DeleteProductos',[App\Http\Controllers\Ventas\VenderProductosControl
 Route::get('RestablecerPassword',[App\Http\Controllers\Seguridad\RecuperarPasswordController::class, 'getView']);
 Route::post('RestablecerPassword',[App\Http\Controllers\Seguridad\RecuperarPasswordController::class, 'resetPass']);
 
+Route::get('ListaIngresosInsumos',[App\Http\Controllers\Contabilidad\InsumosController::class, 'showListaIngresosInsumos']);
+Route::get('ListaConsumoInsumos',[App\Http\Controllers\Contabilidad\InsumosController::class, 'showListaConsumoInsumos']);
+
+Route::get('ListaIngresoProductos',[App\Http\Controllers\Contabilidad\ProductosController::class, 'showListaIngresoProductos']);
+Route::get('ListaVentaProductos',[App\Http\Controllers\Contabilidad\ProductosController::class, 'showListaVentaProductos']);
 
 Route::get('login',[App\Http\Controllers\Autentication\LoginController::class, 'getView']);
 Route::post('login',[App\Http\Controllers\Autentication\LoginController::class, 'login']);
