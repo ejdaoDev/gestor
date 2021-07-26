@@ -65,25 +65,28 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Valor</th>
-                                                <th>Fecha Ingreso</th>
-                                                <th>Agregado por</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>Precio Unidad</th>
+                                                <th>Precio Total</th>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Valor</th>
-                                                <th>Fecha Ingreso</th>
-                                                <th>Agregado por</th>
+                                               <th>Id</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>Precio Unidad</th>
+                                                <th>Precio Total</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                             @foreach ($ventas as $venta)
                                             <tr>
-                                                <th scope="row"><a href="ListaVentaProductos!={{$venta->id}}">{{$venta->id}}</a></th>
-                                                <td>{{number_format($venta->valorpago)}} $</td>
-                                                <td>{{$venta->created}}</td>
-                                                <td>{{$venta->usuario->prinom}} {{$venta->usuario->priape}}</td>                                             
+                                                <td>{{$venta->id}}</td>
+                                                <td>{{$venta->producto->nombre}}</td>
+                                                <td>{{$venta->cantidad}} {{$venta->presentacion->nombre}}</td>
+                                                <td>{{number_format($venta->val_unit)}}$</td>                                             
+                                                <td>{{number_format($venta->val_total)}}$</td>                                             
                                             </tr>        
                                             @endforeach
                                         </tbody>

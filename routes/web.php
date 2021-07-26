@@ -60,10 +60,12 @@ Route::get('RestablecerPassword',[App\Http\Controllers\Seguridad\RecuperarPasswo
 Route::post('RestablecerPassword',[App\Http\Controllers\Seguridad\RecuperarPasswordController::class, 'resetPass']);
 
 Route::get('ListaIngresosInsumos',[App\Http\Controllers\Contabilidad\InsumosController::class, 'showListaIngresosInsumos']);
+Route::get('ListaIngresosInsumos!={id}',[App\Http\Controllers\Contabilidad\InsumosController::class, 'showListaIngresosInsumosDetails']);
 Route::get('ListaConsumoInsumos',[App\Http\Controllers\Contabilidad\InsumosController::class, 'showListaConsumoInsumos']);
 
 Route::get('ListaIngresoProductos',[App\Http\Controllers\Contabilidad\ProductosController::class, 'showListaIngresoProductos']);
 Route::get('ListaVentaProductos',[App\Http\Controllers\Contabilidad\ProductosController::class, 'showListaVentaProductos']);
+Route::get('ListaVentaProductos!={id}',[App\Http\Controllers\Contabilidad\ProductosController::class, 'showListaVentaProductosDetails']);
 
 Route::get('login',[App\Http\Controllers\Autentication\LoginController::class, 'getView']);
 Route::post('login',[App\Http\Controllers\Autentication\LoginController::class, 'login']);

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Insumos\Insumo;
 use App\Models\Ventas\FacturaVenta;
 use App\Models\Productos\ListaProductos;
+use App\Models\Ventas\ListaVenta;
 use App\Models\Presentacion;
 use Session;
 use Carbon\Carbon;
@@ -21,11 +22,21 @@ class ProductosController extends Controller {
             return back();
         }
     }
+    
 
     public function showListaVentaProductos() {
         if ($this->getRol() == "ADMINISTRADOR") {
             $ventas = FacturaVenta::all();
             return view("contabilidad.ListaVentaProductos", compact("ventas"));
+        } else {
+            return back();
+        }
+    }
+    
+      public function showListaVentaProductosDetails($id) {
+        if ($this->getRol() == "ADMINISTRADOR") {
+            $ventas = ListaVenta::all()->where("factven_id",$id);
+            return view("contabilidad.ListaVentaProductosDetails", compact("ventas"));
         } else {
             return back();
         }

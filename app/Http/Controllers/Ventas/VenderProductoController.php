@@ -45,6 +45,8 @@ class VenderProductoController extends Controller {
                 $newIns["producto_id"] = $insumoInList->producto_id;
                 $newIns["cantidad"] = $insumoInList->cantidad;
                 $newIns["presentacion_id"] = $insumoInList->presentacion_id;
+                $newIns["val_unit"] = $insumoInList->val_unit;
+                $newIns["val_total"] = $insumoInList->val_total;
                 $newIns["factven_id"] = $lastFactura["id"];
                 $newIns["created"] = $lastFactura["created"];
                 $newIns["created_by"] = auth()->id();

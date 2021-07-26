@@ -84,7 +84,7 @@ use Carbon\Carbon;
                                         <tbody>
                                             @foreach ($facturas as $factura)
                                             <tr>
-                                                <td>{{$factura->id}}</td>
+                                                  <th scope="row"><a href="ListaIngresosInsumos!={{$factura->id}}">{{$factura->id}}</a></th>
                                                 <td>{{number_format($factura->valorpago)}} $</td>
                                                 <td>{{$factura->created}}</td>
                                                 <td>{{$factura->usuario->prinom}} {{$factura->usuario->priape}}</td>                                             

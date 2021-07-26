@@ -18,6 +18,25 @@ class ListaInsumos extends Model
         "created_by",
         ];
     
+      public function usuario()
+    {
+        //one to one inverso, el prestamo pertenece a un cliente
+        return $this->belongsTo('App\Models\Seguridad\Usuario','created_by','id');
+    }
+    
+     public function insumo()
+    {
+        //one to one inverso, el prestamo pertenece a un cliente
+        return $this->belongsTo('App\Models\Insumos\Insumo');
+    }
+    
+     public function presentacion()
+    {
+        //one to one inverso, el prestamo pertenece a un cliente
+        return $this->belongsTo('App\Models\Presentacion');
+    }
+    
+    
    
     
 }

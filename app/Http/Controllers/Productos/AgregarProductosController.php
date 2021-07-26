@@ -65,7 +65,7 @@ class AgregarProductosController extends Controller
             foreach ($listInsumos as $insumoInList) {
                 $newIns["producto_id"] = $insumoInList->producto_id;
                 $newIns["cantidad"] = $insumoInList->cantidad;
-                $newIns["presentacion_id"] = $insumoInList->presentacion_id;
+                $newIns["presentacion_id"] = $insumoInList->presentacion_id;                
                 $newIns["created"] = Carbon::now();
                 $newIns["created_by"] = auth()->id();
                 $insumo = Producto::findOrFail($insumoInList->producto_id);

@@ -1,8 +1,11 @@
+<?php
+use Carbon\Carbon;
+?>
 <!DOCTYPE html>
 <html lang="es">
 
     <head>
-        <title>Lista venta productos</title>
+        <title>Lista ingresos insumos</title>
         @include('layouts.head')
     </head>
 
@@ -25,10 +28,10 @@
                     </a>
                     <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="ListaIngresosInsumos">Ingresos de Insumos</a>
+                            <a class="collapse-item active" href="ListaIngresosInsumos">Ingresos de Insumos</a>
                             <a class="collapse-item" href="ListaConsumoInsumos">Consumo de Insumos</a>
                             <a class="collapse-item" href="ListaIngresoProductos">Ingreso de Productos</a>
-                            <a class="collapse-item active" href="ListaVentaProductos">Venta de Productos</a>
+                            <a class="collapse-item" href="ListaVentaProductos">Venta de Productos</a>
                         </div>
                     </div>
                 </li>
@@ -44,7 +47,7 @@
 
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                       
+
                         @include('layouts.topbar')
 
                     </nav>
@@ -55,8 +58,9 @@
                     <div class="container-fluid">
                         @include('exits.contabilidadExits')
                         @include('errors.contabilidadErrors')
-                        
-                        
+
+
+
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">                    
                             <div class="card-body">
@@ -65,25 +69,22 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Valor</th>
-                                                <th>Fecha Ingreso</th>
-                                                <th>Agregado por</th>
+                                                <th>Insumo</th>
+                                                <th>Cantidad</th>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Valor</th>
-                                                <th>Fecha Ingreso</th>
-                                                <th>Agregado por</th>
+                                                <th>Insumo</th>
+                                                <th>Cantidad</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            @foreach ($ventas as $venta)
+                                            @foreach ($facturas as $factura)
                                             <tr>
-                                                <th scope="row"><a href="ListaVentaProductos!={{$venta->id}}">{{$venta->id}}</a></th>
-                                                <td>{{number_format($venta->valorpago)}} $</td>
-                                                <td>{{$venta->created}}</td>
-                                                <td>{{$venta->usuario->prinom}} {{$venta->usuario->priape}}</td>                                             
+                                                <td>{{$factura->id}}</td>
+                                                <td>{{$factura->insumo->nombre}}</td>
+                                                <td>{{$factura->cantidad}} {{$factura->presentacion->nombre}}</td>                                            
                                             </tr>        
                                             @endforeach
                                         </tbody>
@@ -91,7 +92,6 @@
                                 </div>
                             </div>
                         </div>
-
 
 
 
