@@ -1,0 +1,24 @@
+#mytopbar{
+  background: linear-gradient(120deg, gray, grey);
+}
+
+#myfooter{
+  background: linear-gradient(120deg, gray, grey);
+}
+#accordionSidebar{
+    background: linear-gradient(140deg, black, gray);
+}
+
+#lvlactive{
+     color: black;
+}
+
+#lvlinactive:hover{
+    background: linear-gradient(140deg, black, gray);
+    color: white;
+}
+
+#lvlactive:hover{
+    background: linear-gradient(140deg, black, gray);
+    color: white;
+}

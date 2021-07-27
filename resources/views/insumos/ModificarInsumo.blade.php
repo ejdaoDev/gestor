@@ -22,9 +22,9 @@
                     </a>
                     <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="RegistrarInsumo">Registrar insumo</a>
-                            <a class="collapse-item active" href="ModificarInsumo">Modificar insumo</a>
-                            <a class="collapse-item" href="AgregarInsumo">Agregar a stock</a>
+                            <a class="collapse-item" id="lvlinactive" href="RegistrarInsumo">Registrar insumo</a>
+                            <a class="collapse-item active" id="lvlactive" href="ModificarInsumo">Modificar insumo</a>
+                            <a class="collapse-item" id="lvlinactive" href="AgregarInsumo">Agregar a stock</a>
                         </div>
                     </div>
                 </li>
@@ -42,7 +42,7 @@
                 <div id="content">
 
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                       <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
                         @include('layouts.topbar')
                     </nav>
                     <!-- End of Topbar -->

@@ -6,10 +6,10 @@
     </a>
     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="ListaIngresosInsumos">Ingresos de Insumos</a>
-            <a class="collapse-item" href="ListaConsumoInsumos">Consumo de Insumos</a>
-            <a class="collapse-item" href="ListaIngresoProductos">Ingreso de Productos</a>
-            <a class="collapse-item" href="ListaVentaProductos">Venta de Productos</a>
+            <a class="collapse-item" id="lvlinactive" href="ListaIngresosInsumos">Ingresos de Insumos</a>
+            <a class="collapse-item" id="lvlinactive" href="ListaConsumoInsumos">Consumo de Insumos</a>
+            <a class="collapse-item" id="lvlinactive" href="ListaIngresoProductos">Ingreso de Productos</a>
+            <a class="collapse-item" id="lvlinactive" href="ListaVentaProductos">Venta de Productos</a>
         </div>
     </div>
 </li>

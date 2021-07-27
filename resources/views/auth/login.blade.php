@@ -1,9 +1,5 @@
-<?php ?>
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
 
@@ -29,7 +25,7 @@
     
     
     
-    <body class="bg-gradient-primary">
+    <body style="background: linear-gradient(140deg, black, gray);">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xl-5 col-lg-9 col-md-5">
@@ -102,7 +98,7 @@
 
 
 
-                                <button type="submit" class="btn btn-primary btn-user btn-block">Acceder</button>
+                              <button type="submit" class="btn btn-user btn-block" style="background: linear-gradient(140deg, black, gray); font-family: cursive; color: white;">Acceder</button>
 
                                 </form>
                   

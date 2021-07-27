@@ -25,10 +25,10 @@
                     </a>
                     <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="ListaIngresosInsumos">Ingresos de Insumos</a>
-                            <a class="collapse-item" href="ListaConsumoInsumos">Consumo de Insumos</a>
-                            <a class="collapse-item" href="ListaIngresoProductos">Ingreso de Productos</a>
-                            <a class="collapse-item active" href="ListaVentaProductos">Venta de Productos</a>
+                            <a class="collapse-item" id="lvlinactive" href="ListaIngresosInsumos">Ingresos de Insumos</a>
+                            <a class="collapse-item" id="lvlinactive" href="ListaConsumoInsumos">Consumo de Insumos</a>
+                            <a class="collapse-item" id="lvlinactive" href="ListaIngresoProductos">Ingreso de Productos</a>
+                            <a class="collapse-item active" id="lvlactive" href="ListaVentaProductos">Venta de Productos</a>
                         </div>
                     </div>
                 </li>
@@ -43,7 +43,7 @@
                 <div id="content">
 
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
                        
                         @include('layouts.topbar')
 

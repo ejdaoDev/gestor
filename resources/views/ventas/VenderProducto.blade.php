@@ -24,7 +24,7 @@
                     </a>
                     <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item active" href="VenderProducto">Vender productos</a>
+                            <a class="collapse-item active" id="lvlactive" href="VenderProducto">Vender productos</a>
                         </div>
                     </div>
                 </li>
@@ -40,7 +40,7 @@
                 <div id="content">
 
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                     <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
                         <button style="width:  100px;" class="btn btn-primary btn-user btn-block" onclick = "location = 'VenderProductos'">{{$count}} In list</button>
                         @include('layouts.topbar')
                     </nav>

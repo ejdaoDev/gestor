@@ -6,8 +6,8 @@
     </a>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="RegistrarUsuario">Registrar usuario</a>
-            <a class="collapse-item" href="ModificarUsuario">Modificar usuario</a>
+            <a class="collapse-item" id="lvlinactive" href="RegistrarUsuario">Registrar usuario</a>
+            <a class="collapse-item" id="lvlinactive" href="ModificarUsuario">Modificar usuario</a>
         </div>
     </div>
 </li>

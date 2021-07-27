@@ -12,7 +12,7 @@
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
                 @include('layouts.sidebar.sidebar_part1')
                 @include('layouts.sidebar.modulos.seguridad')        
                 @include('layouts.sidebar.modulos.insumos')        
@@ -30,7 +30,7 @@
                 <div id="content">
 
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="mytopbar">
                         @include('layouts.topbar')
                     </nav>
                     <!-- End of Topbar -->

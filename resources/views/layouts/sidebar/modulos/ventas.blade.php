@@ -6,7 +6,7 @@
     </a>
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="VenderProducto">Vender productos</a>
+            <a class="collapse-item" id="lvlinactive" href="VenderProducto">Vender productos</a>
         </div>
     </div>
 </li>

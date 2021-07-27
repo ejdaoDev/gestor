@@ -21,8 +21,8 @@
                     </a>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item active" href="RegistrarUsuario">Registrar usuario</a>
-                            <a class="collapse-item" href="ModificarUsuario">Modificar usuario</a>
+                            <a class="collapse-item active" id="lvlactive" href="RegistrarUsuario">Registrar usuario</a>
+                            <a class="collapse-item" id="lvlinactive" href="ModificarUsuario">Modificar usuario</a>
                         </div>
                     </div>
                 </li>      
@@ -41,7 +41,7 @@
                 <div id="content">
 
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                       <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
                         @include('layouts.topbar')
                     </nav>
                     <!-- End of Topbar -->
