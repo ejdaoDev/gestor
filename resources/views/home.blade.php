@@ -36,7 +36,7 @@
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
-                    <div class="container-fluid">
+                    <div class="container-fluid" id="mycontent">
                         @if(auth()->user()->rol->nombre == "ADMINISTRADOR")
                         <!-- Content Row -->
                         <div class="row">

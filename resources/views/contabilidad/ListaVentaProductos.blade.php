@@ -80,7 +80,7 @@
                                         <tbody>
                                             @foreach ($ventas as $venta)
                                             <tr>
-                                                <th scope="row"><a href="ListaVentaProductos!={{$venta->id}}">{{$venta->id}}</a></th>
+                                                  <td> <a id="btn-car" class="btn btn-user btn-block" style="width: 50px;" href="ListaVentaProductos!={{$venta->id}}">+</a></td>
                                                 <td>{{number_format($venta->valorpago)}} $</td>
                                                 <td>{{$venta->created}}</td>
                                                 <td>{{$venta->usuario->prinom}} {{$venta->usuario->priape}}</td>                                             

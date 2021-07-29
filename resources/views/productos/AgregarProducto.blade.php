@@ -43,7 +43,7 @@
 
                     <!-- Topbar -->
                       <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
-                        <button style="width:  100px;" class="btn btn-primary btn-user btn-block" onclick = "location = 'AgregarProductos'">{{$count}} In list</button>
+                          <button id="btn-car" style="width:  100px;" class="btn btn-primary btn-user btn-block" onclick = "location = 'AgregarProductos'">{{$count}} In list</button>
                         @include('layouts.topbar')
                         
                     </nav>
@@ -105,7 +105,7 @@
                                                 </select>
                                             </td>
 
-                                            <td><button class="btn btn-primary btn-user btn-block" type="submit">+</button></td>
+                                            <td><button id="btn-car" class="btn btn-user btn-block" type="submit">+</button></td>
                                         </form>
                                         </tr>
                                         @endforeach

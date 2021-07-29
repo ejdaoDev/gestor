@@ -139,8 +139,8 @@
                                     </table>
                                     <center>
                                         <form class="form-horizontal" method="POST" action="AgregarProductos">{{csrf_field()}}                                                         
-                                            <button class="btn btn-success btn-user btn-block" style="width: 180px; margin-left: 25px" type="submit">Agregar a stock</button>                                      
-                                            <button class="btn btn-danger btn-user btn-block" style="width: 180px; margin-left: 25px" type="button" data-toggle="modal" data-target="#CleanListModal">Limpiar Lista</button>
+                                            <button id="btn-primary" class="btn btn-user btn-block" style="width: 180px; margin-left: 25px" type="submit">Agregar a stock</button>                                      
+                                            <button id="btn-danger" class="btn btn-user btn-block" style="width: 180px; margin-left: 25px" type="button" data-toggle="modal" data-target="#CleanListModal">Limpiar Lista</button>
                                         </form>
                                     </center>
                                 </div>

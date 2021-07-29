@@ -66,7 +66,7 @@
                                     <option value ="2">UNIDAD</option>
                                 </select>
                                 </div>
-                                <button class="btn btn-success btn-user btn-block" type="submit">registrar</button>
+                                <button id="btn-primary" class="btn btn-user btn-block" type="submit">Registrar</button>
 
                                 <hr>
 

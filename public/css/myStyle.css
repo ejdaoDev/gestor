@@ -22,3 +22,39 @@
     background: linear-gradient(140deg, black, gray);
     color: white;
 }
+
+#content{
+     background: linear-gradient(140deg, oldlace, mintcream);
+}
+
+.form-control{
+    background: ivory;
+}
+
+.form-control:focus{
+    background: ivory;
+}
+
+#btn-primary{
+    background: linear-gradient(140deg, green, greenyellow);
+    color: black;
+    font-family: cursive;
+}
+
+#btn-secondary{
+    background: linear-gradient(140deg, gray, steelblue);
+    color: white;
+    font-family: cursive;
+}
+
+#btn-danger{
+    background: linear-gradient(140deg, red, orangered);
+    color: white;
+    font-family: cursive;
+}
+
+#btn-car{
+    background: linear-gradient(140deg, blue, blueviolet);
+    color: white;
+    font-family: cursive;
+}

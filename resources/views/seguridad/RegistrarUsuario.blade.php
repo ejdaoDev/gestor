@@ -111,8 +111,8 @@
                                         <input type="password" class="form-control" name="password_confirmation" maxlength="20"></div>
                                 </div>          
 
-                                <button class="btn btn-success btn-user btn-block" type="submit">registrar</button>
-                                <button class="btn btn-secondary btn-user btn-block" type="reset">Limpiar</button>
+                                <button id="btn-primary" class="btn btn-user btn-block" type="submit">Registrar</button>
+                                <button id="btn-secondary" class="btn btn-user btn-block" type="reset">Limpiar</button>
 
                                 <hr>
 

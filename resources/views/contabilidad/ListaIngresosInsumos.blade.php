@@ -68,14 +68,14 @@ use Carbon\Carbon;
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                <th>Ver</th>
                                                 <th>Valor</th>
                                                 <th>Fecha Ingreso</th>
                                                 <th>Agregado por</th>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Id</th>
+                                                <th>Ver</th>
                                                 <th>Valor</th>
                                                 <th>Fecha Ingreso</th>
                                                 <th>Agregado por</th>
@@ -84,7 +84,7 @@ use Carbon\Carbon;
                                         <tbody>
                                             @foreach ($facturas as $factura)
                                             <tr>
-                                                  <th scope="row"><a href="ListaIngresosInsumos!={{$factura->id}}">{{$factura->id}}</a></th>
+                                                  <td> <a id="btn-car" class="btn btn-user btn-block" style="width: 50px;" href="ListaIngresosInsumos!={{$factura->id}}">+</a></td>
                                                 <td>{{number_format($factura->valorpago)}} $</td>
                                                 <td>{{$factura->created}}</td>
                                                 <td>{{$factura->usuario->prinom}} {{$factura->usuario->priape}}</td>                                             

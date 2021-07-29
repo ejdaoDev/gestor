@@ -2,7 +2,7 @@
 <html lang="es">
 
     <head>
-        <title>Agregar insumo</title>
+        <title>Agregar insumos</title>
         @include('layouts.head')
     </head>
 
@@ -123,12 +123,12 @@
                                                 </td>
                                                 <td>
 
-                                                    <button class="btn btn-primary btn-user btn-block" style="width: 50px;" type="submit">+</button>
+                                                    <button id="btn-car" class="btn btn-user btn-block" style="width: 50px;" type="submit">+</button>
                                                     </form> 
                                                 </td>
                                                 <td>
                                                     <form class="form-horizontal" method="GET" action="DeleteInsumo/{{$insumo->id}}">{{csrf_field()}}
-                                                        <button class="btn btn-danger btn-user btn-block" style="width: 50px;" type="submit">-</button>
+                                                        <button id="btn-secondary" class="btn btn-user btn-block" style="width: 50px;" type="submit">-</button>
                                                     </form> 
                                                 </td>
 
@@ -140,8 +140,8 @@
                                     <center>
                                         <form class="form-horizontal" method="POST" action="AgregarInsumos">{{csrf_field()}}
                                             <input type="text" class="form-control" name="cantidad" style="width: 180px; margin-left: 25px; margin-bottom: 10px;" maxlength="11" onkeyup="format(this)" onchange="format(this)" value="{{ old('cantidad') }}" required>                 
-                                            <button class="btn btn-success btn-user btn-block" style="width: 180px; margin-left: 25px" type="submit">Agregar a stock</button>                                      
-                                            <button class="btn btn-danger btn-user btn-block" style="width: 180px; margin-left: 25px" type="button" data-toggle="modal" data-target="#CleanListModal">Limpiar Lista</button>
+                                            <button id="btn-primary" class="btn btn-user btn-block" style="width: 180px; margin-left: 25px" type="submit">Agregar a stock</button>                                      
+                                            <button id="btn-danger" class="btn btn-user btn-block" style="width: 180px; margin-left: 25px" type="button" data-toggle="modal" data-target="#CleanListModal">Limpiar Lista</button>
                                         </form>
                                     </center>
                                 </div>

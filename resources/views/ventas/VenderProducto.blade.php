@@ -2,7 +2,7 @@
 <html lang="es">
 
     <head>
-        <title>consumir insumo</title>
+        <title>Vender producto</title>
         @include('layouts.head')
     </head>
 
@@ -41,7 +41,7 @@
 
                     <!-- Topbar -->
                      <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
-                        <button style="width:  100px;" class="btn btn-primary btn-user btn-block" onclick = "location = 'VenderProductos'">{{$count}} In list</button>
+                         <button id="btn-car" style="width:  100px;" class="btn btn-user btn-block" onclick = "location = 'VenderProductos'">{{$count}} In list</button>
                         @include('layouts.topbar')
                     </nav>
                     <!-- End of Topbar -->
@@ -109,7 +109,7 @@
                                                 </select>
                                             </td>
 
-                                            <td><button class="btn btn-danger btn-user btn-block" type="submit">-</button></td>
+                                            <td><button id="btn-danger" class="btn btn-user btn-block" type="submit">-</button></td>
                                         </form>
                                         </tr>
                                         @endforeach
