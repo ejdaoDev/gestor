@@ -105,7 +105,7 @@
                                                 </select>
                                             </td>
 
-                                            <td><button id="btn-car" class="btn btn-user btn-block" type="submit">+</button></td>
+                                            <td><button id="btn-car" class="btn btn-user btn-block" type="submit"><i class="fas fa-plus"></i></button></td>
                                         </form>
                                         </tr>
                                         @endforeach

@@ -1,3 +1,6 @@
+<?php 
+use Carbon\Carbon; 
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -64,14 +67,14 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                <th>Ver</th>
                                                 <th>Valor</th>
                                                 <th>Fecha Ingreso</th>
                                                 <th>Agregado por</th>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Id</th>
+                                                <th>Ver</th>
                                                 <th>Valor</th>
                                                 <th>Fecha Ingreso</th>
                                                 <th>Agregado por</th>
@@ -80,9 +83,18 @@
                                         <tbody>
                                             @foreach ($ventas as $venta)
                                             <tr>
-                                                  <td> <a id="btn-car" class="btn btn-user btn-block" style="width: 50px;" href="ListaVentaProductos!={{$venta->id}}">+</a></td>
+                                                  <td> <a id="btn-car" class="btn btn-user btn-block" style="width: 50px;" href="ListaVentaProductos!={{$venta->id}}"><i class="fas fa-search"></i></a></td>
                                                 <td>{{number_format($venta->valorpago)}} $</td>
-                                                <td>{{$venta->created}}</td>
+                                                <td>
+                                                <?php
+                                                $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio",
+                                                               "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                                $fecha = Carbon::parse($venta->created);
+                                                $mes = $meses[($fecha->format('n')) - 1];
+                                                echo $fecha->format('d')."/".$mes."/".$fecha->format('Y')." ";                                          
+                                                echo $fecha->format('h:m:s A');                                             
+                                                ?>
+                                                </td>
                                                 <td>{{$venta->usuario->prinom}} {{$venta->usuario->priape}}</td>                                             
                                             </tr>        
                                             @endforeach

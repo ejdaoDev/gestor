@@ -118,12 +118,12 @@
                                                     </div>  
                                             </td>
                                             <td>                                                    
-                                                <button id="btn-car" class="btn btn-user btn-block" style="width: 50px;" type="submit">+</button>
+                                                <button id="btn-car" class="btn btn-user btn-block" style="width: 50px;" type="submit"><i class="fas fa-marker"></i></button>
                                                 </form> 
                                         </td>
 
 
-                                        <td><button id="btn-secondary" class="btn btn-user btn-block" href="DeleteProducto/{{$producto->id}}"  onclick="location = 'DeleteProducto/{{$producto->id}}'" type="button">-</button></td>
+                                        <td><button id="btn-secondary" class="btn btn-user btn-block" href="DeleteProducto/{{$producto->id}}"  onclick="location = 'DeleteProducto/{{$producto->id}}'" type="button"><i class="far fa-trash-alt"></i></button></td>
                                     
                                         </tr>
                                         @endforeach

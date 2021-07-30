@@ -1,3 +1,6 @@
+<?php 
+use Carbon\Carbon; 
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -84,7 +87,16 @@
                                                 <td>{{$producto->id}}</td>
                                                 <td>{{$producto->producto->nombre}}</td>
                                                 <td>{{$producto->cantidad}} {{$producto->presentacion->nombre}}</td>                                            
-                                                <td>{{$producto->created}}</td>                                             
+                                                <td>
+                                                <?php
+                                                $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio",
+                                                               "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                                $fecha = Carbon::parse($producto->created);
+                                                $mes = $meses[($fecha->format('n')) - 1];
+                                                echo $fecha->format('d')."/".$mes."/".$fecha->format('Y')." ";                                          
+                                                echo $fecha->format('h:m:s A');                                             
+                                                ?>
+                                                </td>                                     
                                                 <td>{{$producto->usuario->prinom}} {{$producto->usuario->priape}}</td>                                             
                                             </tr>        
                                             @endforeach

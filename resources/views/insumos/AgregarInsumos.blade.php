@@ -123,12 +123,12 @@
                                                 </td>
                                                 <td>
 
-                                                    <button id="btn-car" class="btn btn-user btn-block" style="width: 50px;" type="submit">+</button>
+                                                    <button id="btn-car" class="btn btn-user btn-block" style="width: 50px;" type="submit"><i class="fas fa-marker"></i></button>
                                                     </form> 
                                                 </td>
                                                 <td>
                                                     <form class="form-horizontal" method="GET" action="DeleteInsumo/{{$insumo->id}}">{{csrf_field()}}
-                                                        <button id="btn-secondary" class="btn btn-user btn-block" style="width: 50px;" type="submit">-</button>
+                                                        <button id="btn-secondary" class="btn btn-user btn-block" style="width: 50px;" type="submit"><i class="far fa-trash-alt"></i></button>
                                                     </form> 
                                                 </td>
 

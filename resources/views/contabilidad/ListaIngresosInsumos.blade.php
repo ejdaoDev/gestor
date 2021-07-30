@@ -84,9 +84,18 @@ use Carbon\Carbon;
                                         <tbody>
                                             @foreach ($facturas as $factura)
                                             <tr>
-                                                  <td> <a id="btn-car" class="btn btn-user btn-block" style="width: 50px;" href="ListaIngresosInsumos!={{$factura->id}}">+</a></td>
+                                                  <td> <a id="btn-car" class="btn btn-user btn-block" style="width: 50px;" href="ListaIngresosInsumos!={{$factura->id}}"><i class="fas fa-search"></i></a></td>
                                                 <td>{{number_format($factura->valorpago)}} $</td>
-                                                <td>{{$factura->created}}</td>
+                                                <td>
+                                                <?php
+                                                $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio",
+                                                               "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                                $fecha = Carbon::parse($factura->created);
+                                                $mes = $meses[($fecha->format('n')) - 1];
+                                                echo $fecha->format('d')."/".$mes."/".$fecha->format('Y')." ";                                          
+                                                echo $fecha->format('h:m:s A');                                             
+                                                ?>
+                                                </td>
                                                 <td>{{$factura->usuario->prinom}} {{$factura->usuario->priape}}</td>                                             
                                             </tr>        
                                             @endforeach

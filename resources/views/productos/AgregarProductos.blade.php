@@ -2,7 +2,7 @@
 <html lang="es">
 
     <head>
-        <title>Agregar insumo</title>
+        <title>Agregar productos</title>
         @include('layouts.head')
     </head>
 
@@ -123,12 +123,12 @@
                                                 </td>
                                                 <td>
 
-                                                    <button class="btn btn-primary btn-user btn-block" style="width: 50px;" type="submit">+</button>
+                                                    <button id="btn-car" class="btn btn-user btn-block" style="width: 50px;" type="submit"><i class="fas fa-marker"></i></button>
                                                     </form> 
                                                 </td>
                                                 <td>
                                                     <form class="form-horizontal" method="GET" action="DeleteProducto2/{{$insumo->id}}">{{csrf_field()}}
-                                                        <button class="btn btn-danger btn-user btn-block" style="width: 50px;" type="submit">-</button>
+                                                        <button id="btn-secondary" class="btn btn-user btn-block" style="width: 50px;" type="submit"><i class="far fa-trash-alt"></i></button>
                                                     </form> 
                                                 </td>
 

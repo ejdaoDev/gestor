@@ -109,7 +109,7 @@
                                                 </select>
                                             </td>
 
-                                            <td><button id="btn-danger" class="btn btn-user btn-block" type="submit">-</button></td>
+                                            <td><button id="btn-danger" class="btn btn-user btn-block" type="submit"><i class="fas fa-cart-plus"></i></button></td>
                                         </form>
                                         </tr>
                                         @endforeach
