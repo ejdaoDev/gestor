@@ -18,6 +18,9 @@ class ProductosController extends Controller {
         if ($this->getRol() == "ADMINISTRADOR") {
             $productos = ListaProductos::all();
             return view("contabilidad.ListaIngresoProductos", compact("productos"));
+        } else if ($this->getRol() == "INVENTARIO PRODUCTOS") {
+            $productos = ListaProductos::all()->where("created_by", auth()->id());
+            return view("contabilidad.ListaIngresoProductos", compact("productos"));
         } else {
             return back();
         }
@@ -28,13 +31,16 @@ class ProductosController extends Controller {
         if ($this->getRol() == "ADMINISTRADOR") {
             $ventas = FacturaVenta::all();
             return view("contabilidad.ListaVentaProductos", compact("ventas"));
-        } else {
+        }else if ($this->getRol() == "VENTAS") {
+            $ventas = FacturaVenta::all()->where("created_by", auth()->id());
+            return view("contabilidad.ListaVentaProductos", compact("ventas"));
+        }  else {
             return back();
         }
     }
     
       public function showListaVentaProductosDetails($id) {
-        if ($this->getRol() == "ADMINISTRADOR") {
+        if ($this->getRol() == "ADMINISTRADOR" | $this->getRol() == "VENTAS") {
             $ventas = ListaVenta::all()->where("factven_id",$id);
             return view("contabilidad.ListaVentaProductosDetails", compact("ventas"));
         } else {

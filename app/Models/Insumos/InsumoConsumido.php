@@ -10,6 +10,7 @@ class InsumoConsumido extends Modelo
     protected $fillable = [
         "insumo_id",
         "cantidad",
+        "numerac",
         "presentacion_id",
         "created",
         "created_by",

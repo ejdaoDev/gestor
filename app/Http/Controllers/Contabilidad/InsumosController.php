@@ -18,13 +18,16 @@ class InsumosController extends Controller {
         if ($this->getRol() == "ADMINISTRADOR") {
             $facturas = FacturaInsumos::all();
             return view("contabilidad.ListaIngresosInsumos", compact("facturas"));
+        } else if ($this->getRol() == "INVENTARIO INSUMOS") {
+            $facturas = FacturaInsumos::all()->where("created_by", auth()->id());
+            return view("contabilidad.ListaIngresosInsumos", compact("facturas"));
         } else {
             return back();
         }
     }
     
    public function showListaIngresosInsumosDetails($id) {
-        if ($this->getRol() == "ADMINISTRADOR") {
+        if ($this->getRol() == "ADMINISTRADOR" | $this->getRol() == "INVENTARIO INSUMOS") {
             $facturas = ListaInsumos::all()->where("factins_id",$id);
         
             return view("contabilidad.ListaIngresosInsumosDetails", compact("facturas"));
@@ -36,6 +39,9 @@ class InsumosController extends Controller {
     public function showListaConsumoInsumos() {
         if ($this->getRol() == "ADMINISTRADOR") {
             $insumos = InsumoConsumido::all();
+            return view("contabilidad.ListaConsumoInsumos",compact("insumos"));
+        } else if ($this->getRol() == "INVENTARIO PRODUCTOS") {
+            $insumos = InsumoConsumido::all()->where("created_by", auth()->id());
             return view("contabilidad.ListaConsumoInsumos",compact("insumos"));
         } else {
             return back();

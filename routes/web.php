@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('RegistrarUsuario',[App\Http\Controllers\Seguridad\RegistrarUsuarioController::class, 'getView']);
+Route::get('AgregarPresentacion',[App\Http\Controllers\Seguridad\RegistrarUsuarioController::class, 'getViewAP']);
 Route::post('RegistrarUsuario',[App\Http\Controllers\Seguridad\RegistrarUsuarioController::class, 'register']);
+Route::post('AgregarPresentacion',[App\Http\Controllers\Seguridad\RegistrarUsuarioController::class, 'addPres']);
 Route::get('ModificarUsuario',[App\Http\Controllers\Seguridad\ModificarUsuarioController::class, 'getView']);
 
 Route::get('activateUser/{id}',[App\Http\Controllers\Seguridad\ModificarUsuarioController::class, 'activateUser']);

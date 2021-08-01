@@ -2,7 +2,7 @@
 <html lang="es">
 
     <head>
-        <title>modificar usuario</title>
+        <title>Modificar usuario</title>
         @include('layouts.head')
     </head>
 
@@ -23,6 +23,7 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" id="lvlinactive" href="RegistrarUsuario">Registrar usuario</a>
                             <a class="collapse-item active" id="lvlactive" href="ModificarUsuario">Modificar usuario</a>
+                            <a class="collapse-item" id="lvlinactive" href="AgregarPresentacion">Agregar presentacion</a>
                         </div>
                     </div>
                 </li>     
@@ -81,7 +82,8 @@
                                         <tbody>
                                             @foreach($usuarios as $usuario)
                                             <tr>
-                                                <th scope="row"><a href="ModificarUsuario/{{$usuario->id}}">{{$usuario->numide}}</a></th>
+                                                <!--<th scope="row"><a href="ModificarUsuario/{{$usuario->id}}">{{$usuario->numide}}</a></th>-->
+                                                <td>{{$usuario->numide}}</td>
                                                 <td>{{$usuario->prinom}}</td>
                                                 <td>{{$usuario->priape}}</td>
                                                 <td>{{$usuario->email}}</td>

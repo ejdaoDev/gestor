@@ -2,7 +2,7 @@
 <html lang="es">
 
     <head>
-        <title>Registrar usuario</title>
+        <title>Agregar presentacion</title>
         @include('layouts.head')
     </head>
 
@@ -21,9 +21,9 @@
                     </a>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item active" id="lvlactive" href="RegistrarUsuario">Registrar usuario</a>
+                            <a class="collapse-item" id="lvlinactive" href="RegistrarUsuario">Registrar usuario</a>
                             <a class="collapse-item" id="lvlinactive" href="ModificarUsuario">Modificar usuario</a>
-                            <a class="collapse-item" id="lvlinactive" href="AgregarPresentacion">Agregar presentacion</a>
+                            <a class="collapse-item active" id="lvlactive" href="AgregarPresentacion">Agregar presentacion</a>
                         </div>
                     </div>
                 </li>      
@@ -50,7 +50,7 @@
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <div class="col-lg-4" style="margin: 0 auto;">
-                            <form class="form-horizontal" method="POST" action="RegistrarUsuario">{{csrf_field()}} 
+                            <form class="form-horizontal" method="POST" action="AgregarPresentacion">{{csrf_field()}} 
 
                                 @include('exits.seguridadExits')
                                 @include('errors.seguridadErrors')
@@ -63,55 +63,27 @@
                                     </ul>
                                 </div>
                                 @endif
-
+                                
                                 <div class="form-group">
-                                    Identificación*
-                                    <input type="text" class="form-control" name="numide"  value="{{ old('numide') }}" maxlength="20" required autofocus>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        Primer nombre*
-                                        <input type="text" class="form-control" name="prinom" maxlength="50" value="{{ old('prinom') }}" required>
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        Segundo nombre
-                                        <input type="text" class="form-control" maxlength="50" name="secnom" value="{{ old('secnom') }}"></div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        Primer apellido*
-                                        <input type="text" class="form-control" name="priape" maxlength="50" value="{{ old('priape') }}" required>
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        Segundo apellido
-                                        <input type="text" class="form-control" name="secape" maxlength="50" value="{{ old('secape') }}"></div>
-                                </div>                               
-                                <div class="form-group">
-                                    Rol*
-                                <select name="rol" class="form-control">
-                                    <option selected disabled hidden style='display: none' value=''></option>
-                                    @foreach ($roles as $rol)
-                                    <option value ="{{$rol->id}}">{{$rol->nombre}}</option>
-                                    @endforeach
+                                    Tipo de Medida
+                                <select name="medida" class="form-control">
+                                    <option selected disabled hidden style='display: none' value=''></option>                                  
+                                    <option value ="1">PESO</option>
+                                    <option value ="2">UNIDAD</option>                                   
                                 </select>
                                 </div>
-                                
-                                  
                                 <div class="form-group">
-                                    Email*
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" maxlength="100" required autofocus>
+                                    Nombre
+                                    <input type="text" class="form-control" name="nombre"  value="{{ old('nombre') }}" maxlength="50" required autofocus>
                                 </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        password*
-                                        <input type="password" class="form-control" name="password" maxlength="20">
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        Confirmar password*
-                                        <input type="password" class="form-control" name="password_confirmation" maxlength="20"></div>
-                                </div>          
-
+                                <div class="form-group">
+                                    Factor Multiplicativo
+                                    <input type="text" class="form-control" name="multfactor"  value="{{ old('multfactor') }}" required autofocus>
+                                </div>
+                                <div class="form-group">
+                                    Abreviación
+                                    <input type="text" class="form-control" name="abrev"  value="{{ old('abrev') }}" maxlength="20" required autofocus>
+                                </div>
                                 <button id="btn-primary" class="btn btn-user btn-block" type="submit">Registrar</button>
                                 <button id="btn-secondary" class="btn btn-user btn-block" type="reset">Limpiar</button>
 

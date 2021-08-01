@@ -28,3 +28,9 @@
    <b>{{Session::get('passrestablecida')}}</b>
  </div>
 @endif
+@if(Session::has('prscrea'))
+ <div class="alert alert-success alert-dismissible" role="success">
+ <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
+   <b>{{Session::get('prscrea')}}</b>
+ </div>
+@endif

@@ -28,11 +28,17 @@ use Carbon\Carbon;
                     </a>
                     <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" id="lvlinactive" href="ListaIngresosInsumos">Ingresos de Insumos</a>
-                            <a class="collapse-item" id="lvlinactive" href="ListaConsumoInsumos">Consumo de Insumos</a>
-                            <a class="collapse-item active" id="lvlactive" href="ListaIngresoProductos">Ingreso de Productos</a>
-                            <a class="collapse-item" id="lvlinactive" href="ListaVentaProductos">Venta de Productos</a>
-                        </div>
+                            @if(auth()->user()->rol_id == 1 | auth()->user()->rol_id == 2)
+                                <a class="collapse-item" id="lvlinactive" href="ListaIngresosInsumos">Ingresos de Insumos</a>
+                                @endif
+                                @if(auth()->user()->rol_id == 1 | auth()->user()->rol_id == 3)
+                                <a class="collapse-item" id="lvlinactive" href="ListaConsumoInsumos">Consumo de Insumos</a>
+                               <a class="collapse-item active" id="lvlactive" href="ListaIngresoProductos">Ingreso de Productos</a>
+                                @endif
+                                @if(auth()->user()->rol_id == 1 | auth()->user()->rol_id == 4)
+                                <a class="collapse-item" id="lvlinactive" href="ListaVentaProductos">Venta de Productos</a>
+                                @endif
+                           </div>
                     </div>
                 </li>
                 @include('layouts.sidebar.sidebar_part2')
@@ -94,7 +100,7 @@ use Carbon\Carbon;
                                                 $fecha = Carbon::parse($producto->created);
                                                 $mes = $meses[($fecha->format('n')) - 1];
                                                 echo $fecha->format('d')."/".$mes."/".$fecha->format('Y')." ";                                          
-                                                echo $fecha->format('h:m:s A');                                             
+                                                echo $fecha->format('h:i:s A');                                             
                                                 ?>
                                                 </td>                                     
                                                 <td>{{$producto->usuario->prinom}} {{$producto->usuario->priape}}</td>                                             

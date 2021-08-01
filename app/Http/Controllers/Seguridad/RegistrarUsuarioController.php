@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Seguridad\Usuario;
 use App\Models\Seguridad\Rol;
+use App\Models\Presentacion;
 use Session;
 use Carbon\Carbon;
 
@@ -18,6 +19,29 @@ class RegistrarUsuarioController extends Controller {
         } else {
             return back();
         }
+    }
+    public function getViewAP() {
+    if ($this->getRol() == "ADMINISTRADOR"){
+            return view('seguridad.AgregarPresentacion');
+        } else {
+            return back();
+        }
+    }
+    
+    public function addPres(Request $request) {   
+           $this->validate($request, ['nombre' => 'required|unique:gipresentacion']); 
+           $new["medida_id"] = $request->medida;
+           $new["nombre"] = trim(strtoupper($request->nombre));
+           $new["multfactor"] = $request->multfactor;
+           $new["abreviacion"] = trim(strtoupper($request->abreviacion));
+           $new["created"] = Carbon::now();
+           $new["created_by"] = auth()->id();
+           Presentacion::create($new);
+           Session::flash('prscrea', 'La presentación fue añadida exitosamente');
+            return redirect("AgregarPresentacion");
+           
+           
+           
     }
 
     public function register(Request $request) {

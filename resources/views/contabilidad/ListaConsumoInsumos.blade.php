@@ -1,5 +1,6 @@
-<?php 
-use Carbon\Carbon; 
+<?php
+
+use Carbon\Carbon;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,11 +28,20 @@ use Carbon\Carbon;
                         <span>Contabilidad</span>
                     </a>
                     <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" id="lvlinactive" href="ListaIngresosInsumos">Ingresos de Insumos</a>
-                            <a class="collapse-item active" id="lvlactive" href="ListaConsumoInsumos">Consumo de Insumos</a>
-                            <a class="collapse-item" id="lvlinactive" href="ListaIngresoProductos">Ingreso de Productos</a>
-                            <a class="collapse-item" id="lvlinactive" href="ListaVentaProductos">Venta de Productos</a>
+                        
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                
+                                @if(auth()->user()->rol_id == 1 | auth()->user()->rol_id == 2)
+                                <a class="collapse-item" id="lvlinactive" href="ListaIngresosInsumos">Ingresos de Insumos</a>
+                                @endif
+                                @if(auth()->user()->rol_id == 1 | auth()->user()->rol_id == 3)
+                                <a class="collapse-item active" id="lvlactive" href="ListaConsumoInsumos">Consumo de Insumos</a>
+                                <a class="collapse-item" id="lvlinactive" href="ListaIngresoProductos">Ingreso de Productos</a>
+                                @endif
+                                @if(auth()->user()->rol_id == 1 | auth()->user()->rol_id == 4)
+                                <a class="collapse-item" id="lvlinactive" href="ListaVentaProductos">Venta de Productos</a>
+                                @endif
+                  
                         </div>
                     </div>
                 </li>
@@ -46,8 +56,8 @@ use Carbon\Carbon;
                 <div id="content">
 
                     <!-- Topbar -->
-                       <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
-                       
+                    <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"  id="mytopbar">
+
                         @include('layouts.topbar')
 
                     </nav>
@@ -59,8 +69,8 @@ use Carbon\Carbon;
                         @include('exits.contabilidadExits')
                         @include('errors.contabilidadErrors')
 
-                        
-                         <!-- DataTales Example -->
+
+                        <!-- DataTales Example -->
                         <div class="card shadow mb-4">                    
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -87,16 +97,16 @@ use Carbon\Carbon;
                                             <tr>
                                                 <td>{{$insumo->id}}</td>
                                                 <td>{{$insumo->insumo->nombre}}</td>
-                                                <td>{{$insumo->cantidad}} {{$insumo->presentacion->nombre}}</td>                                            
+                                                <td>{{$insumo->numerac}} {{$insumo->presentacion->nombre}}</td>                                            
                                                 <td>
-                                                <?php
-                                                $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio",
-                                                               "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                                                $fecha = Carbon::parse($insumo->created);
-                                                $mes = $meses[($fecha->format('n')) - 1];
-                                                echo $fecha->format('d')."/".$mes."/".$fecha->format('Y')." ";                                          
-                                                echo $fecha->format('h:m:s A');                                             
-                                                ?>
+                                                    <?php
+                                                    $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                                                        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+                                                    $fecha = Carbon::parse($insumo->created);
+                                                    $mes = $meses[($fecha->format('n')) - 1];
+                                                    echo $fecha->format('d') . "/" . $mes . "/" . $fecha->format('Y') . " ";
+                                                    echo $fecha->format('h:i:s A');
+                                                    ?>
                                                 </td>                                             
                                                 <td>{{$insumo->usuario->prinom}} {{$insumo->usuario->priape}}</td>                                             
                                             </tr>        

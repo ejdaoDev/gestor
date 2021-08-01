@@ -12,6 +12,7 @@ class Presentacion extends Modelo
         "medida_id",
         "nombre",
         "abreviacion",
+        "multfactor",
         "created",
         "created_by",
         ];

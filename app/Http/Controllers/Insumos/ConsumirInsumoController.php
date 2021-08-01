@@ -41,6 +41,7 @@ class ConsumirInsumoController extends Controller {
         
         $inscons["insumo_id"] = $insumo->id;
         $inscons["cantidad"] = $realcant;
+        $inscons["numerac"] = $request->cantidad;
         $inscons["presentacion_id"] = $request->presentacion;
         $inscons["created"] = Carbon::now();
         $inscons["created_by"] = auth()->id();
