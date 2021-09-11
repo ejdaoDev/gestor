@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Productos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Seguridad\Usuario;
+use App\Models\Productos\Producto;
 use Session;
 use Carbon\Carbon;
 
@@ -13,7 +14,16 @@ class ModificarProductoController extends Controller
      
     
     public function getView() {
-       return view('productos.ModificarProducto');   
+        $insumos = Producto::all();
+       return view('productos.ModificarProducto',compact("insumos"));   
+    }
+    
+    public function modify(Request $request) {
+        $producto = Producto::findOrFail($request->id);
+        $upd["precio"] = str_replace(",","",$request->precio);
+        $producto->update($upd);
+        Session::flash('modifynice', 'El precio del producto fue editado correctamente');
+       return redirect("ModificarProducto");   
     }
     
     /*

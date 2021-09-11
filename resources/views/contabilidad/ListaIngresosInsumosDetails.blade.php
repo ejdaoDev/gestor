@@ -90,7 +90,7 @@ use Carbon\Carbon;
                                             <tr>
                                                 <td>{{$factura->id}}</td>
                                                 <td>{{$factura->insumo->nombre}}</td>
-                                                <td>{{$factura->cantidad}} {{$factura->presentacion->nombre}}</td>                                            
+                                                <td>{{$factura->cantidad}} {{$factura->presentacion->nombre}}</td>                                            p0
                                             </tr>        
                                             @endforeach
                                         </tbody>

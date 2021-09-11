@@ -12,6 +12,7 @@ class ListaInsumos extends Model
         "id",
         "insumo_id",
         "cantidad",
+        "numerac",
         "presentacion_id",
         "factins_id",
         "created",

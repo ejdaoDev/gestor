@@ -24,6 +24,7 @@
                     <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" id="lvlinactive" href="RegistrarProducto">Registrar producto</a>
+                            <a class="collapse-item active" id="lvlactive" href="ModificarProducto">Modificar producto</a>
                             <a class="collapse-item" id="lvlinactive" href="ConsumirInsumo">Consumir insumo</a>
                             <a class="collapse-item" id="lvlinactive" href="AgregarProducto">Agregar a stock</a>
                         </div>
@@ -49,9 +50,50 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
+                        @include('exits.productosExits')
+                        @include('errors.productosErrors')
 
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">                           
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Precio($)</th>
+                                                <th></th>                                           
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                               <th>Nombre</th>
+                                                <th>Precio($)</th>
+                                                <th></th> 
+                                            </tr>
+                                        </tfoot>                                        
+                                        @foreach($insumos as $insumo)                                            
+                                        <tr>
+                                        <form class="form-horizontal" method="POST" action="ModificarProducto">{{csrf_field()}}
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="hidden" name="id" value="{{$insumo->id}}">
+                                                    <input type="text" class="form-control" name="nombre" style="width: 300px" value="{{$insumo->nombre}}" maxlength="70" required autofocus>
+                                                </div>
+                                            <td>
+                                                <div class="form-group">                                                    
+                                                    <input type="text" class="form-control" name="precio" style="width: 100px" onkeyup="format(this)" onchange="format(this)" value="{{number_format($insumo->precio)}}" maxlength="15" required autofocus>
+                                                </div>
+                                            </td>
+                                            <td><button type="submit" class="btn btn-success btn-user btn-block" style="width: 150px">Modificar</button></td>
+                                        </form>
+                                        </tr>                                   
+                                        @endforeach
 
-
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <!-- /.container-fluid -->

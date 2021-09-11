@@ -46,3 +46,9 @@
    <b>{{Session::get('proaddtolist')}}</b>
  </div>
 @endif
+@if(Session::has('modifynice'))
+ <div class="alert alert-success alert-dismissible" role="success">
+ <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</button>
+   <b>{{Session::get('modifynice')}}</b>
+ </div>
+@endif

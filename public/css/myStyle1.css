@@ -1,38 +1,38 @@
 #mytopbar{
-  background: linear-gradient(120deg, #5f493e, #866a41);
+  background: linear-gradient(120deg, gray, grey);
 }
 
 #myfooter{
-  background: linear-gradient(120deg, #5f493e, #866a41);
+  background: linear-gradient(120deg, gray, grey);
 }
 #accordionSidebar{
-    background: linear-gradient(140deg, #3c2414, #3c2414);
+    background: linear-gradient(140deg, black, gray);
 }
 
 #lvlactive{
-     color: #3c2414;
+     color: black;
 }
 
 #lvlinactive:hover{
-    background: linear-gradient(140deg, #3c2414, #3c2414);
+    background: linear-gradient(140deg, black, gray);
     color: white;
 }
 
 #lvlactive:hover{
-  background: linear-gradient(140deg, #3c2414, #3c2414);
+    background: linear-gradient(140deg, black, gray);
     color: white;
 }
 
 #content{
-     background: linear-gradient(140deg, white, #b4aca7);
+     background: linear-gradient(140deg, oldlace, mintcream);
 }
 
 .form-control{
-    background: white;
+    background: ivory;
 }
 
 .form-control:focus{
-    background: white;
+    background: ivory;
 }
 
 #btn-primary{

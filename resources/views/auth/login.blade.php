@@ -25,7 +25,7 @@
     
     
     
-    <body style="background: linear-gradient(140deg, black, gray);">
+    <body style="background: linear-gradient(140deg, #3c2414, #3c2414);">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xl-5 col-lg-9 col-md-5">

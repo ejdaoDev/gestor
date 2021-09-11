@@ -18,6 +18,8 @@ Route::get('AgregarPresentacion',[App\Http\Controllers\Seguridad\RegistrarUsuari
 Route::post('RegistrarUsuario',[App\Http\Controllers\Seguridad\RegistrarUsuarioController::class, 'register']);
 Route::post('AgregarPresentacion',[App\Http\Controllers\Seguridad\RegistrarUsuarioController::class, 'addPres']);
 Route::get('ModificarUsuario',[App\Http\Controllers\Seguridad\ModificarUsuarioController::class, 'getView']);
+Route::get('ModificarUsuario!={id}',[App\Http\Controllers\Seguridad\ModificarUsuarioController::class, 'getViewMU']);
+Route::post('ModificarUsuario!={id}',[App\Http\Controllers\Seguridad\ModificarUsuarioController::class, 'ModifyUser']);
 
 Route::get('activateUser/{id}',[App\Http\Controllers\Seguridad\ModificarUsuarioController::class, 'activateUser']);
 Route::get('inactivateUser/{id}',[App\Http\Controllers\Seguridad\ModificarUsuarioController::class, 'inactivateUser']);
@@ -37,7 +39,8 @@ Route::post('AgregarInsumo',[App\Http\Controllers\Insumos\AgregarInsumoControlle
 
 Route::get('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProductoController::class, 'getView']);
 Route::post('RegistrarProducto',[App\Http\Controllers\Productos\RegistrarProductoController::class, 'register']);
-//Route::get('ModificarProducto',[App\Http\Controllers\Productos\ModificarProductoController::class, 'getView']);
+Route::get('ModificarProducto',[App\Http\Controllers\Productos\ModificarProductoController::class, 'getView']);
+Route::post('ModificarProducto',[App\Http\Controllers\Productos\ModificarProductoController::class, 'modify']);
 Route::get('ConsumirInsumo',[App\Http\Controllers\Insumos\ConsumirInsumoController::class, 'getView']);
 Route::post('ConsumirInsumo',[App\Http\Controllers\Insumos\ConsumirInsumoController::class, 'consume']);
 Route::get('AgregarProducto',[App\Http\Controllers\Productos\AgregarProductoController::class, 'getView']);

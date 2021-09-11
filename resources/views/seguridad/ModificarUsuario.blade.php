@@ -59,6 +59,7 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
+                                                <th>Modificar</th>
                                                 <th>Identidad</th>
                                                 <th>Nombres</th>
                                                 <th>Apellidos</th>
@@ -70,6 +71,7 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
+                                                <th>Modificar</th>
                                                 <th>Identidad</th>
                                                 <th>Nombres</th>
                                                 <th>Apellidos</th>
@@ -83,6 +85,7 @@
                                             @foreach($usuarios as $usuario)
                                             <tr>
                                                 <!--<th scope="row"><a href="ModificarUsuario/{{$usuario->id}}">{{$usuario->numide}}</a></th>-->
+                                                <td><button id="btn-car" class="btn btn-user btn-block" style="width: 50px;" onclick="location='ModificarUsuario!={{$usuario->id}}'"><i class="fas fa-marker"></i></button></td>
                                                 <td>{{$usuario->numide}}</td>
                                                 <td>{{$usuario->prinom}}</td>
                                                 <td>{{$usuario->priape}}</td>
